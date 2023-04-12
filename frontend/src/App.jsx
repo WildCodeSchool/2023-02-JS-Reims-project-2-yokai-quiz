@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Quizz from "./components/Quizz";
 import "./App.css";
 
 function App() {
@@ -24,12 +24,6 @@ function App() {
       ))}
     </div>
   );
-}
-
-//  Quizz
-
-function Quizz() {
-  return "quiz";
 }
 
 export default App;
