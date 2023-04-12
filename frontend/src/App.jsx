@@ -3,17 +3,16 @@ import Home from "./pages/Home";
 
 import "./App.css";
 
-const [templeData, setTempleData] = useState([]);
-
-const templeOfJapan = () => {
-  fetch("http://localhost:5000/temples")
-    .then((resp) => resp.json())
-    .then((data) => {
-      setTempleData(data);
-    });
-};
-
 function App() {
+  const [templeData, setTempleData] = useState([]);
+
+  const templeOfJapan = () => {
+    fetch("http://localhost:5000/temples")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTempleData(data);
+      });
+  };
   return (
     <div className="App">
       <Home />
