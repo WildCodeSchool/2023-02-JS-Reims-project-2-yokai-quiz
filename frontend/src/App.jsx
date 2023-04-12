@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Home from "./pages/Home";
 
 import "./App.css";
 
@@ -15,7 +14,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Home />
+      <Quizz />
       <p>coucou</p>
       <button type="button" onClick={templeOfJapan}>
         click me
@@ -25,6 +24,12 @@ function App() {
       ))}
     </div>
   );
+}
+
+//  Quizz
+
+function Quizz() {
+  return "quiz";
 }
 
 export default App;
