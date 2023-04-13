@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import Quizz from "./components/Quizz";
 import Map from "./components/Map";
 
 import "./App.css";
@@ -15,6 +17,8 @@ function App() {
   };
   return (
     <div className="App">
+      <Quizz />
+      <p>coucou</p>
       <button type="button" onClick={templeOfJapan}>
         click me
       </button>
