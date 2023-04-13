@@ -1,76 +1,57 @@
-import { useState } from "react";
-
-let start = false;
+import { useState, useEffect } from "react";
 
 function Quizz() {
-  const [quizz, setQuizz] = useState([]);
-  const [numQuizz, setNumQuiz] = useState(0);
+  const [quizz, setQuizz] = useState();
+  const [questionIndex, setQuestionIndex] = useState(0);
 
   const amount = 5 + 5;
   const difficulty = "easy";
 
-  if (start === false) {
+  useEffect(() => {
     fetch(
       `https://opentdb.com/api.php?amount=${amount}&category=31&difficulty=${difficulty}&type=multiple`
     )
       .then((resp) => resp.json())
       .then((data) => {
-        setQuizz(data);
-        start = true;
+        setQuizz({ questions: data.results });
       });
-  }
-  const addNumQuizz = () => {
-    setNumQuiz(numQuizz + 1);
+  }, []);
+
+  const passToNextQuestion = () => {
+    setQuestionIndex(questionIndex + 1);
   };
-  const answer = [];
-  if (quizz.results) {
-    answer.push(quizz.results[numQuizz].correct_answer);
-    answer.push(quizz.results[numQuizz].incorrect_answers[0]);
-    answer.push(quizz.results[numQuizz].incorrect_answers[1]);
-    answer.push(quizz.results[numQuizz].incorrect_answers[2]);
+  const answers = [];
+  if (quizz) {
+    answers.push(quizz.questions[questionIndex].correct_answer);
+    answers.push(...quizz.questions[questionIndex].incorrect_answers);
+
+    answers.sort(() => Math.random() - 0.5);
   }
   return (
-    quizz.results && (
+    quizz && (
       <>
         <div>
-          <p>{quizz.results[numQuizz].category}</p>
-          <p>difficulty: {quizz.results[numQuizz].difficulty}</p>
-          <p>type: {quizz.results[numQuizz].type}</p>
+          <p>{quizz.questions[questionIndex].category}</p>
+          <p>difficulty: {quizz.questions[questionIndex].difficulty}</p>
+          <p>type: {quizz.questions[questionIndex].type}</p>
         </div>
-        <p>
-          <h2>
-            {quizz.results[numQuizz].question
-              .replace(/&quot;/g, `"`)
-              .replace(/&#039;/g, `'`)
-              .replace(/&amp;/g, `&`)}
-          </h2>
-        </p>
-        <p>
-          <button type="button" onClick={addNumQuizz}>
-            {answer[0]
-              .replace(/&quot;/g, `"`)
-              .replace(/&#039;/g, `'`)
-              .replace(/&amp;/g, `&`)}
-          </button>
-          <button type="button" onClick={addNumQuizz}>
-            {answer[1]
-              .replace(/&quot;/g, `"`)
-              .replace(/&#039;/g, `'`)
-              .replace(/&amp;/g, `&`)}
-          </button>
-          <button type="button" onClick={addNumQuizz}>
-            {answer[2]
-              .replace(/&quot;/g, `"`)
-              .replace(/&#039;/g, `'`)
-              .replace(/&amp;/g, `&`)}
-          </button>
-          <button type="button" onClick={addNumQuizz}>
-            {answer[3]
-              .replace(/&quot;/g, `"`)
-              .replace(/&#039;/g, `'`)
-              .replace(/&amp;/g, `&`)}
-          </button>
-        </p>
+
+        <h2>
+          {quizz.questions[questionIndex].question
+            .replace(/&quot;/g, `"`)
+            .replace(/&#039;/g, `'`)
+            .replace(/&amp;/g, `&`)}
+        </h2>
+        <div className="answers">
+          {answers.map((answer) => (
+            <button type="button" onClick={passToNextQuestion}>
+              {answer
+                .replace(/&quot;/g, `"`)
+                .replace(/&#039;/g, `'`)
+                .replace(/&amp;/g, `&`)}
+            </button>
+          ))}
+        </div>
       </>
     )
   );
