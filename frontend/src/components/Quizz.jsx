@@ -44,7 +44,7 @@ function Quizz() {
         </h2>
         <div className="answers">
           {answers.map((answer) => (
-            <button type="button" onClick={passToNextQuestion}>
+            <button key={answer} type="button" onClick={passToNextQuestion}>
               {answer
                 .replace(/&quot;/g, `"`)
                 .replace(/&#039;/g, `'`)
