@@ -1,5 +1,8 @@
 import { useState } from "react";
+
 import Quizz from "./components/Quizz";
+import Map from "./components/Map";
+
 import "./App.css";
 
 function App() {
@@ -19,9 +22,7 @@ function App() {
       <button type="button" onClick={templeOfJapan}>
         click me
       </button>
-      {templeData.map((temple) => (
-        <p key={temple.id}>{temple.name}</p>
-      ))}
+      <Map temples={templeData} />
     </div>
   );
 }
