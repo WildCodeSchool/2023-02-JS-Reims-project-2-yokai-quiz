@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
-import Temples from "./ButtonTemple";
 
 function Map({ temples }) {
-  return (
-    <div>
-      <Temples temples={temples} />
-    </div>
-  );
+  return temples.map((temple) => (
+    <button type="button" key={temple.id}>
+      {temple.nameTemple}
+    </button>
+  ));
 }
 
 Map.propTypes = {
