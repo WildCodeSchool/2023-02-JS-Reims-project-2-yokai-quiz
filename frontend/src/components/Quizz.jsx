@@ -1,33 +1,35 @@
 import { useState } from "react";
 
+let start = false;
+
 function Quizz() {
   const [quizz, setQuizz] = useState([]);
   const [numQuizz, setNumQuiz] = useState(0);
-  const getQuizz = () => {
+  if (start === false) {
     fetch(
-      "https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple"
+      `https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple`
     )
       .then((resp) => resp.json())
       .then((data) => {
         setQuizz(data);
+        start = true;
       });
-  };
+  }
   const addNumQuizz = () => {
     setNumQuiz(numQuizz + 1);
   };
   return (
     <div>
-      <button type="button" onClick={getQuizz}>
-        getQuizz
-      </button>
       <button type="button" onClick={addNumQuizz}>
         getNumQuizz
       </button>
-      <p>
-        Who was given the title &quot;Full Metal&quot; in the anime series
-        &quot;Full Metal Alchemist&quot;?
-      </p>
-      {quizz.results ? <p>{quizz.results[numQuizz].question}</p> : <p>ici</p>}
+      {quizz.results && (
+        <p>
+          {quizz.results[numQuizz].question
+            .replace(/&quot;/g, `"`)
+            .replace(/&#039;/g, `'`)}
+        </p>
+      )}
     </div>
   );
 }
