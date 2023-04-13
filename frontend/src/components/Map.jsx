@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 
 function Map({ temples }) {
   return temples.map((temple) => (
-    <button type="button" key={temple.id}>
-      {temple.nameTemple}
+    <button type="button" key={temple.id} className="buttonTemple">
+      <img src="./image/temple.jpg" alt={temple.nameTemple} />
+      <p>{temple.nameTemple}</p>
     </button>
   ));
 }
