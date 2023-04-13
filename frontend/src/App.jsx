@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Home from "./pages/Home";
+import Map from "./components/Map";
 
 import "./App.css";
 
@@ -15,14 +15,10 @@ function App() {
   };
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
       <button type="button" onClick={templeOfJapan}>
         click me
       </button>
-      {templeData.map((temple) => (
-        <p key={temple.id}>{temple.name}</p>
-      ))}
+      <Map temples={templeData} />
     </div>
   );
 }
