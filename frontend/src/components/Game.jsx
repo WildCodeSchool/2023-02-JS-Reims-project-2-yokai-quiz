@@ -1,18 +1,15 @@
-import { useState } from "react";
-
-let start = false;
+import { useState, useEffect } from "react";
 
 function Game() {
   const [templeData, setTempleData] = useState([]);
 
-  if (start === false) {
+  useEffect(() => {
     fetch("http://localhost:5000/temples")
       .then((resp) => resp.json())
       .then((data) => {
         setTempleData(data);
-        start = true;
       });
-  }
+  });
 
   return (
     <>
