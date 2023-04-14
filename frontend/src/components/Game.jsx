@@ -9,12 +9,12 @@ function Game() {
       .then((data) => {
         setTempleData(data);
       });
-  });
+  }, []);
 
   return (
     <>
       {templeData.map((temple) => (
-        <p key={temple.id}>{temple.templName}</p>
+        <p key={temple.id}>{temple.templeName}</p>
       ))}
     </>
   );
