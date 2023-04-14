@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Quizz from "./components/Quizz";
 import "./App.css";
+import Connection from "./components/Connection";
 
 function App() {
   const [templeData, setTempleData] = useState([]);
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Quizz />
+      <Connection />
       <p>coucou</p>
       <button type="button" onClick={templeOfJapan}>
         click me
