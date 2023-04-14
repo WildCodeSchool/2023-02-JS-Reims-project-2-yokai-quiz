@@ -4,6 +4,7 @@ import Quizz from "./components/Quizz";
 import Map from "./components/Map";
 
 import "./App.css";
+import Home from "./components/Home";
 
 function App() {
   const [templeData, setTempleData] = useState([]);
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Quizz />
+      <Home />
       <p>coucou</p>
       <button type="button" onClick={templeOfJapan}>
         click me
