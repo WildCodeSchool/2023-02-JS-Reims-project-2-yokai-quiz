@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 import templeImage from "../assets/templeImage.jpg";
 
-function Map({ temples }) {
+function Map({ temples, setSwitchToTemple }) {
   return temples.map((temple) => (
-    <button type="button" key={temple.id} className="buttonTemple">
+    <button
+      onClick={setSwitchToTemple}
+      type="button"
+      key={temple.id}
+      className="buttonTemple"
+    >
       <img src={templeImage} alt={temple.templeName} />
       <p>{temple.templeName}</p>
     </button>
@@ -21,6 +26,7 @@ Map.propTypes = {
       yokaiLife: PropTypes.number.isRequired,
     }).isRequired
   ).isRequired,
+  setSwitchToTemple: PropTypes.func.isRequired,
 };
 
 export default Map;

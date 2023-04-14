@@ -1,13 +1,19 @@
-import React from "react";
+import PropTypes from "prop-types";
+
 import kami from "../assets/kami.png";
 
-function Home() {
+function Home({ setSwitchToGame }) {
   return (
     <div>
       <img src={kami} alt="kami" />
-      <button type="button">Start</button>
+      <button onClick={setSwitchToGame} type="button">
+        Start
+      </button>
     </div>
   );
 }
 
+Home.propTypes = {
+  setSwitchToGame: PropTypes.func.isRequired,
+};
 export default Home;
