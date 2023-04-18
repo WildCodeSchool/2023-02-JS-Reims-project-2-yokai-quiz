@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import Quizz from "./components/Quizz";
 import Map from "./components/Map";
-
-import "./App.css";
 import Home from "./components/Home";
+
+import "./App.scss";
 
 function App() {
   const [templeData, setTempleData] = useState([]);
