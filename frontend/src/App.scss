@@ -43,11 +43,12 @@ button {
 }
 
 .quizz {
-  width: 75%;
+  width: 95%;
   text-align: center;
 }
 .player {
   width: 70%;
+  text-align: center;
 }
 
 .answers {
@@ -61,23 +62,43 @@ button {
 }
 
 .story {
-  width: 75%;
+  width: 100%;
 }
 .Game {
   display: flex;
-  flex-direction: initial;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-around;
+  width: 100%;
 }
 .yokai {
+  text-align: center;
   width: 70%;
+  img {
+    width: 100%;
+  }
+}
+.infoQuizz {
+  display: none;
 }
 
 @media (orientation: landscape) {
   .infoQuizz {
+    display: initial;
     width: 45%;
   }
   .yokai {
     width: 45%;
+    img {
+      width: 50%;
+    }
+  }
+  .Game {
+    display: flex;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }

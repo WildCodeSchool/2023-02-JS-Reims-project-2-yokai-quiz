@@ -6,10 +6,10 @@ import Map from "./Map";
 function Game() {
   const [switchToTemple, setSwitchToTemple] = useState(false);
   const [templeData, setTempleData] = useState([]);
-  const [templeChoice, setTempleChoice] = useState(1);
+  const [templeChoice, setTempleChoice] = useState(2);
 
   useEffect(() => {
-    fetch("http://localhost:5000/temples")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/temples`)
       .then((resp) => resp.json())
       .then((data) => {
         setTempleData(data);

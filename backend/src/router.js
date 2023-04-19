@@ -8,20 +8,21 @@ const temples = [
   {
     id: 1,
     templeName: "Meji-Jingu",
-    story: "histoire Kappa",
+    story:
+      "Hello, I am a Kappa, a legendary Japanese creature that lives near water. I have fast swimming abilities and am known to grab careless humans who swim in my domain. I have a preference for cucumbers and a unique personality that can be both mischievous and protective towards those around me.",
     yokaiName: "Kappa",
     level: 1,
     yokaiLife: 5,
-    yokaiImage: "/assets/images/oniImg.png",
+    yokaiImage: "/assets/images/kappa.png",
   },
   {
     id: 2,
     templeName: "Senso-ji",
-    story: "histoire Kase-Obake",
-    yokaiName: "Kase-Obake",
+    story: "histoire Kasa-Obake",
+    yokaiName: "Kasa-Obake",
     level: 1,
     yokaiLife: 5,
-    yokaiImage: "/assets/images/oniImg.png",
+    yokaiImage: "/assets/images/kasa-obake.png",
   },
   {
     id: 3,

@@ -11,6 +11,16 @@ function Temple({ temple }) {
   useEffect(() => {
     document.title = "Temple";
   }, []);
+
+  useEffect(() => {
+    if (playerLife <= 0) {
+      document.location.href = "/";
+    }
+    if (yokaiLife <= 0) {
+      document.location.href = "/game";
+    }
+  }, [playerLife, yokaiLife]);
+
   return (
     <div className="Game">
       <div className="yokai">
