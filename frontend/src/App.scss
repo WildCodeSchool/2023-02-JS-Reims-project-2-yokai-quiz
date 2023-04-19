@@ -22,19 +22,19 @@ button {
   color: $main-color;
 }
 
-.quizz{
+.quizz {
   width: 75%;
   text-align: center;
 }
 
-.answers{
+.answers {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
 @media (orientation: landscape) {
-  .infoQuizz{
+  .infoQuizz {
     width: 45%;
   }
 }
