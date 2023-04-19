@@ -1,19 +1,16 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import Game from "./components/Game";
 import Home from "./components/Home";
 import "./App.scss";
 
 function App() {
-  const [switchToGame, setSwitchToGame] = useState(false);
-
   return (
     <div className="App">
-      {switchToGame === false ? (
-        <Home setSwitchToGame={setSwitchToGame} />
-      ) : (
-        <Game />
-      )}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Game />} />
+      </Routes>
     </div>
   );
 }
