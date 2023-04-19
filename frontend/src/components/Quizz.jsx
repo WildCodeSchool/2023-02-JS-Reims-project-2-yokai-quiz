@@ -39,7 +39,8 @@ function Quizz() {
           {quizz.questions[questionIndex].question
             .replace(/&quot;/g, `"`)
             .replace(/&#039;/g, `'`)
-            .replace(/&amp;/g, `&`)}
+            .replace(/&amp;/g, `&`)
+            .replace(/&eacute;/g, `é`)}
         </h2>
         <div className="answers quizz">
           {answers.map((answer) => (
@@ -47,7 +48,8 @@ function Quizz() {
               {answer
                 .replace(/&quot;/g, `"`)
                 .replace(/&#039;/g, `'`)
-                .replace(/&amp;/g, `&`)}
+                .replace(/&amp;/g, `&`)
+                .replace(/&eacute;/g, `é`)}
             </button>
           ))}
         </div>
