@@ -4,7 +4,7 @@ import templeImage from "../assets/templeImage.jpg";
 function Map({ temples, setSwitchToTemple }) {
   return temples.map((temple) => (
     <button
-      onClick={setSwitchToTemple}
+      onClick={() => setSwitchToTemple(true)}
       type="button"
       key={temple.id}
       className="buttonTemple"

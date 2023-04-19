@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function HistoryOfTheTemple({ setSwitchToQuizz }) {
   return (
-    <button onClick={setSwitchToQuizz} type="button">
+    <button onClick={() => setSwitchToQuizz(true)} type="button">
       skip⇒
     </button>
   );

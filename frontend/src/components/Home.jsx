@@ -6,7 +6,7 @@ function Home({ setSwitchToGame }) {
   return (
     <div>
       <img src={kami} alt="kami" />
-      <button onClick={setSwitchToGame} type="button">
+      <button onClick={() => setSwitchToGame(true)} type="button">
         Start
       </button>
     </div>
