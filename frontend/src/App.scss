@@ -16,14 +16,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .logo {
-    padding-left: 42em;
-    padding-bottom: 5rem;
-  }
+
   .Yokai {
-    height: 30rem;
-    padding-left: 39.5rem;
-    padding-bottom: 4rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    margin: 0%;
   }
   .ID {
     display: flex;
@@ -64,6 +62,9 @@ body {
     100% {
       transform: translate3d(0, -100%, 0);
     }
+  }
+  button {
+    float: right;
   }
 }
 

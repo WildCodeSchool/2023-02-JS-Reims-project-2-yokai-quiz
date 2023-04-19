@@ -14,8 +14,9 @@ class UsernameInput extends React.Component {
 
   render() {
     return (
-      <div className="ID">
-        <label htmlFor="username">Username:</label>
+      <>
+        <label htmlFor="username">What's your name hero ?</label>
+
         <input
           type="text"
           id="username"
@@ -23,7 +24,7 @@ class UsernameInput extends React.Component {
           value={this.state.username}
           onChange={this.handleChange.bind(this)}
         />
-      </div>
+      </>
     );
   }
 }
