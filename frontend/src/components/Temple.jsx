@@ -12,7 +12,21 @@ function Temple({ temple }) {
   return (
     <div>
       <h1>{temple.yokaiName}</h1>
-      <h1> {temple.yokaiLife} PV</h1>
+      <div className="health-icons">
+        {Array.from({ length: temple.yokaiLife }, (_, index) => (
+          <svg
+            key={index}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="red"
+            width="1rem"
+            height="1rem"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 21.35l-1.45-1.32C5.4 14.79 2 11.58 2 7.5 2 4.42 4.42 2 7.5 2c2.34 0 4.47 1.19 5.74 3.15C14.03 3.19 16.16 2 18.5 2 21.58 2 24 4.42 24 7.5c0 4.08-3.4 7.29-8.55 12.53L12 21.35z" />
+          </svg>
+        ))}
+      </div>
 
       {switchToQuizz === false ? (
         <HistoryOfTheTemple setSwitchToQuizz={setSwitchToQuizz} />

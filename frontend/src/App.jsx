@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Game from "./components/Game";
 import Home from "./components/Home";
+import "./App.scss";
 
 function App() {
   const [switchToGame, setSwitchToGame] = useState(false);
