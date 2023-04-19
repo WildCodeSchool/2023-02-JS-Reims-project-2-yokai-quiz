@@ -1,7 +1,9 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
-
+* {
+  font-family: "Alkatra", cursive;
+}
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +16,55 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .logo {
+    padding-left: 42em;
+    padding-bottom: 5rem;
+  }
+  .Yokai {
+    height: 30rem;
+    padding-left: 39.5rem;
+    padding-bottom: 4rem;
+  }
+  .ID {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  .marque-ver {
+    position: relative;
+    max-width: 45em;
+    height: 10em;
+    margin: 2em auto;
+    border: 10px solid #f0f0ff;
+    overflow: hidden;
+    box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
+  }
+  .marque-ver > div {
+    position: relative;
+    padding: 2em;
+    padding-top: 6em; /* meme que height du parent */
+    animation: defilement-ver 30s infinite linear;
+    cursor: pointer;
+  }
+  .marque-ver:hover > div {
+    animation-play-state: paused;
+  }
+  .msg {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .msg:first-letter {
+    font-weight: 700;
+    color: #f00;
+  }
+  @keyframes defilement-ver {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
 }
 
 button {
@@ -42,23 +93,23 @@ button {
   margin-right: 5px;
 }
 
-.quizz{
+.quizz {
   width: 75%;
   text-align: center;
 }
 
-.answers{
+.answers {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  button{
+  button {
     width: 45%;
     margin-bottom: 1rem;
   }
 }
 
 @media (orientation: landscape) {
-  .infoQuizz{
+  .infoQuizz {
     width: 45%;
   }
 }

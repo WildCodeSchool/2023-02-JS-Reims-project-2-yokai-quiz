@@ -14,7 +14,7 @@ class UsernameInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ID">
         <label htmlFor="username">Username:</label>
         <input
           type="text"
