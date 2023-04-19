@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <img src={kami} alt="kami" />
-      <Link to="/map">
+      <Link to="/game">
         <button type="button">Start</button>
       </Link>
     </div>

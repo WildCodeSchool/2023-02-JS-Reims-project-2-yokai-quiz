@@ -25,7 +25,7 @@ function Game() {
       templeChoice={setTempleChoice}
     />
   ) : (
-    <Temples />
+    <Temple temple={temple} />
   );
 }
 
