@@ -1,19 +1,15 @@
-import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
 
-function Home({ setSwitchToGame }) {
+function Home() {
   return (
     <div>
       <img src={kami} alt="kami" />
-      <button onClick={() => setSwitchToGame(true)} type="button">
-        Start
-      </button>
+      <Link to="/map">
+        <button type="button">Start</button>
+      </Link>
     </div>
   );
 }
 
-Home.propTypes = {
-  setSwitchToGame: PropTypes.func.isRequired,
-};
 export default Home;
