@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 
 function HistoryOfTheTemple({ setSwitchToQuizz }) {
   return (
-    <button onClick={() => setSwitchToQuizz(true)} type="button">
-      skip⇒
-    </button>
+    <>
+      <p className="story">test</p>
+      <button onClick={() => setSwitchToQuizz(true)} type="button">
+        skip⇒
+      </button>
+    </>
   );
 }
 

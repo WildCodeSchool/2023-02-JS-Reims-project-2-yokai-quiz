@@ -12,6 +12,7 @@ const temples = [
     yokaiName: "Kappa",
     level: 1,
     yokaiLife: 5,
+    yokaiImage: "/assets/images/oniImg.png",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const temples = [
     yokaiName: "Kase-Obake",
     level: 1,
     yokaiLife: 5,
+    yokaiImage: "/assets/images/oniImg.png",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const temples = [
     yokaiName: "Akamata",
     level: 2,
     yokaiLife: 5,
+    yokaiImage: "/assets/images/oniImg.png",
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const temples = [
     yokaiName: "Akurojin-no-hi",
     level: 2,
     yokaiLife: 5,
+    yokaiImage: "/assets/images/oniImg.png",
   },
   {
     id: 5,
@@ -44,6 +48,7 @@ const temples = [
     yokaiName: "Oni",
     level: 3,
     yokaiLife: 5,
+    yokaiImage: "/assets/images/oniImg.png",
   },
 ];
 

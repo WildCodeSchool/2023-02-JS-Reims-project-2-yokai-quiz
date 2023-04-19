@@ -42,23 +42,42 @@ button {
   margin-right: 5px;
 }
 
-.quizz{
+.quizz {
   width: 75%;
   text-align: center;
 }
+.player {
+  width: 70%;
+}
 
-.answers{
+.answers {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  button{
+  button {
     width: 45%;
     margin-bottom: 1rem;
   }
 }
 
+.story {
+  width: 75%;
+}
+.Game {
+  display: flex;
+  flex-direction: initial;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.yokai {
+  width: 70%;
+}
+
 @media (orientation: landscape) {
-  .infoQuizz{
+  .infoQuizz {
+    width: 45%;
+  }
+  .yokai {
     width: 45%;
   }
 }

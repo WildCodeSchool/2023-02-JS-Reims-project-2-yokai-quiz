@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-function Quizz() {
+function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife }) {
   const [quizz, setQuizz] = useState();
   const [questionIndex, setQuestionIndex] = useState(0);
 
@@ -17,7 +18,12 @@ function Quizz() {
       });
   }, []);
 
-  const passToNextQuestion = () => {
+  const passToNextQuestion = (answer) => {
+    if (answer === quizz.questions[questionIndex].correct_answer) {
+      setYokaiLife(yokaiLife - 1);
+    } else {
+      setPlayerLife(playerLife - 1);
+    }
     setQuestionIndex(questionIndex + 1);
   };
   const answers = [];
@@ -45,7 +51,13 @@ function Quizz() {
         </h2>
         <div className="answers quizz">
           {answers.map((answer) => (
-            <button key={answer} type="button" onClick={passToNextQuestion}>
+            <button
+              key={answer}
+              type="button"
+              onClick={() => {
+                passToNextQuestion(answer);
+              }}
+            >
               {answer
                 .replace(/&quot;/g, `"`)
                 .replace(/&#039;/g, `'`)
@@ -59,4 +71,10 @@ function Quizz() {
   );
 }
 
+Quizz.propTypes = {
+  setYokaiLife: PropTypes.func.isRequired,
+  setPlayerLife: PropTypes.func.isRequired,
+  yokaiLife: PropTypes.number.isRequired,
+  playerLife: PropTypes.number.isRequired,
+};
 export default Quizz;
