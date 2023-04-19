@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Temples from "./Temples";
+import Temple from "./Temple";
 import Map from "./Map";
 
 function Game() {
@@ -18,7 +18,7 @@ function Game() {
   return switchToTemple === false ? (
     <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
   ) : (
-    <Temples />
+    <Temple />
   );
 }
 
