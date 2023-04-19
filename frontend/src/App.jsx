@@ -1,30 +1,17 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Quizz from "./components/Quizz";
-import Map from "./components/Map";
+import Game from "./components/Game";
 import Home from "./components/Home";
 
 import "./App.scss";
 
 function App() {
-  const [templeData, setTempleData] = useState([]);
-
-  const templeOfJapan = () => {
-    fetch("http://localhost:5000/temples")
-      .then((resp) => resp.json())
-      .then((data) => {
-        setTempleData(data);
-      });
-  };
   return (
     <div className="App">
-      <Quizz />
-      <Home />
-      <p>coucou</p>
-      <button type="button" onClick={templeOfJapan}>
-        click me
-      </button>
-      <Map temples={templeData} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Game />} />
+      </Routes>
     </div>
   );
 }
