@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
-import Temples from "./Temples";
+import Temple from "./Temple";
 import Map from "./Map";
 
 function Game() {
   const [switchToTemple, setSwitchToTemple] = useState(false);
   const [templeData, setTempleData] = useState([]);
+  const [templeChoice, setTempleChoice] = useState(1);
 
   useEffect(() => {
     fetch("http://localhost:5000/temples")
@@ -15,10 +16,16 @@ function Game() {
       });
   }, []);
 
+  const temple = templeData.find((data) => data.id === templeChoice);
+
   return switchToTemple === false ? (
-    <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
+    <Map
+      setSwitchToTemple={setSwitchToTemple}
+      temples={templeData}
+      templeChoice={setTempleChoice}
+    />
   ) : (
-    <Temples />
+    <Temple temple={temple} />
   );
 }
 
