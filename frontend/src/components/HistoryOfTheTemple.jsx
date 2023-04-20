@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 function HistoryOfTheTemple({ setSwitchToQuizz, story }) {
   return (
-    <div>
-      <p className="story">{story}</p>
+    <div className="story">
+      <p>{story}</p>
       <button onClick={() => setSwitchToQuizz(true)} type="button">
         skip⇒
       </button>
