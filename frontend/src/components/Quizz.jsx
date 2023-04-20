@@ -41,7 +41,6 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife }) {
           <p>difficulty: {quizz.questions[questionIndex].difficulty}</p>
           <p>type: {quizz.questions[questionIndex].type}</p>
         </div>
-        <br />
         <h2 className="question quizz">
           {quizz.questions[questionIndex].question
             .replace(/&quot;/g, `"`)
