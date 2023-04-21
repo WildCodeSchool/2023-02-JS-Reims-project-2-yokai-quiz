@@ -22,7 +22,7 @@ function Home() {
           beings.
         </div>
       </div>
-      <Link to="/map">
+      <Link to="/game">
         <button type="button">Start</button>
       </Link>
     </>
