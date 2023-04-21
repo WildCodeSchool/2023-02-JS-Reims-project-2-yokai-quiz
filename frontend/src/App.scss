@@ -1,0 +1,40 @@
+$main-color: #383637;
+$secondary-color: #f8e8d8;
+$accent-color: #bf0404;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $main-color;
+  color: $secondary-color;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  font-size: 2em;
+  background-color: $secondary-color;
+  color: $main-color;
+}
+
+.quizz {
+  width: 75%;
+  text-align: center;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media (orientation: landscape) {
+  .infoQuizz {
+    width: 45%;
+  }
+}
