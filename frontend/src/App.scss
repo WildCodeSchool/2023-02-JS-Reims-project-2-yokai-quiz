@@ -15,7 +15,9 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
+.tooltip {
+  background-color: #bf0404;
+}
 button {
   font-size: 2em;
   background-color: $secondary-color;
@@ -116,4 +118,3 @@ button {
     width: 45%;
   }
 }
-
