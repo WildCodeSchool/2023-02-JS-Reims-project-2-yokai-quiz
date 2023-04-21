@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
-import UsernameInput from "./Connexion";
 import Titre from "../assets/Titre.png";
 
 function Home() {
   return (
     <>
-      <div className="logo">
-        <img src={Titre} alt="Logo" />
-      </div>
+      <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
-      <UsernameInput />
+      <p>What's your name Hero ? </p>
+      <input type="text" />
       <div className="marque-ver">
         <div className="msg">
           There is a world beyond our reality, a world populated by mystical and

@@ -38,7 +38,6 @@ body {
     box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
   }
   .marque-ver > div {
-    position: relative;
     padding: 2em;
     padding-top: 6em; /* meme que height du parent */
     animation: defilement-ver 30s infinite linear;
