@@ -1,5 +1,4 @@
 import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
 import map from "../assets/map_jap.png";
@@ -21,7 +20,12 @@ function Map({ temples, setSwitchToTemple }) {
           >
             <img src={templeImage} alt={temple.templeName} />
           </button>
-          <Tooltip anchorSelect={`.buttonTemple${temple.id}`} clickable>
+          <Tooltip
+            className="tooltip"
+            classNameArrow="arrow-tooltip"
+            anchorSelect={`.buttonTemple${temple.id}`}
+            clickable
+          >
             <h3>Temple {temple.templeName}</h3>
             <p>Level: {temple.level}</p>
             <p>
