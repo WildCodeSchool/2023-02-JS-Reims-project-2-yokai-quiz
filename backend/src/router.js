@@ -26,7 +26,7 @@ const temples = [
     templeName: "Okunitama Jinja",
     story: "histoire Akamata",
     yokaiName: "Akamata",
-    level: 2,
+    level: 1,
     yokaiLife: 5,
   },
   {
@@ -40,6 +40,22 @@ const temples = [
   {
     id: 5,
     templeName: "Asuka-Dera",
+    story: "histoire Oni",
+    yokaiName: "Oni",
+    level: 2,
+    yokaiLife: 5,
+  },
+  {
+    id: 6,
+    templeName: "Asuka",
+    story: "histoire Oni",
+    yokaiName: "Oni",
+    level: 2,
+    yokaiLife: 5,
+  },
+  {
+    id: 7,
+    templeName: "Dera",
     story: "histoire Oni",
     yokaiName: "Oni",
     level: 3,

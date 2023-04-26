@@ -8,7 +8,7 @@ function Game() {
   const [templeData, setTempleData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/temples")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/temples`)
       .then((resp) => resp.json())
       .then((data) => {
         setTempleData(data);

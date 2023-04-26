@@ -1,8 +1,13 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
+
+:root{//modification parametre par defaut de Tooltip
+  --rt-opacity: 1;
+}
 * {
   font-family: "Alkatra", cursive;
+
 }
 body {
   margin: 0;
@@ -71,6 +76,11 @@ body {
     }
   }
 }
+.tooltip {
+  background-color: $main-color;
+  color: $secondary-color;
+  border-radius: 1rem;
+}
 
 button {
   font-size: 2em;
@@ -79,23 +89,16 @@ button {
 }
 
 .buttonTemple {
-  border: 1px solid;
-  color: $accent-color;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 150px;
-  height: 150px;
-}
 
-.buttonTemple img {
-  width: 50%;
-  height: auto;
-  margin-right: 5px;
+  border-radius: 50%;
+  border-color: $accent-color;
+  font-size: 0rem;
+  cursor: pointer;
+  background-color: $secondary-color;
+  z-index: 2;
+  img {
+    width: 3rem;
+  }
 }
 
 .quizz {
@@ -111,6 +114,70 @@ button {
     width: 45%;
     margin-bottom: 1rem;
   }
+}
+
+.mapContainer {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 75px);
+  grid-template-rows: repeat(12, 75px);
+  .japonMap {
+    width: auto;
+    height: 100%;
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
+}
+
+.buttonTemple1 {
+  grid-column-start: 9;
+  grid-column-end: 10;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.buttonTemple2 {
+  grid-column-start: 8;
+  grid-column-end: 9;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+.buttonTemple3 {
+  grid-column-start: 8;
+  grid-column-end: 9;
+  grid-row-start: 7;
+  grid-row-end: 8;
+}
+
+.buttonTemple4 {
+  grid-column-start: 7;
+  grid-column-end: 8;
+  grid-row-start: 8;
+  grid-row-end: 9;
+}
+
+.buttonTemple5 {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 9;
+  grid-row-end: 10;
+}
+
+.buttonTemple6 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 10;
+  grid-row-end: 11;
+}
+
+.buttonTemple7 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 11;
+  grid-row-end: 12;
+
 }
 
 @media (orientation: landscape) {
