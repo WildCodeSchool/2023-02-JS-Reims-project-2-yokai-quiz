@@ -57,16 +57,18 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
 }
 
 Quizz.propTypes = {
-  quizz: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      templeName: PropTypes.string.isRequired,
-      yokaiName: PropTypes.string.isRequired,
-      level: PropTypes.string.isRequired,
-      yokaiImage: PropTypes.string.isRequired,
-      yokaiLife: PropTypes.number.isRequired,
-    }).isRequired
-  ).isRequired,
+  quizz: PropTypes.shape({
+    questions: PropTypes.arrayOf(
+      PropTypes.shape({
+        category: PropTypes.string.isRequired,
+        correct_answer: PropTypes.string.isRequired,
+        difficulty: PropTypes.string.isRequired,
+        question: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        incorrect_answers: PropTypes.arrayOf,
+      }).isRequired
+    ).isRequired,
+  }).isRequired,
   setYokaiLife: PropTypes.func.isRequired,
   setPlayerLife: PropTypes.func.isRequired,
   yokaiLife: PropTypes.number.isRequired,
