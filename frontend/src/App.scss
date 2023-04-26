@@ -22,7 +22,7 @@ body {
   .Home {
     background-image: url(assets/parchemin.png);
     background-position: bottom;
-    background-size: 160%;
+    background-size: 50rem;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ body {
     .marque-ver > div {
       padding: 2em;
       padding-top: 6em; /* meme que height du parent */
-      animation: defilement-ver 30s infinite linear;
+      animation: defilement-ver 60s infinite linear;
       cursor: pointer;
     }
     .marque-ver:hover > div {
@@ -64,10 +64,6 @@ body {
     .msg {
       font-size: 1.5em;
       line-height: 1.5em;
-    }
-    .msg:first-letter {
-      font-weight: 700;
-      color: #f00;
     }
 
     @keyframes defilement-ver {

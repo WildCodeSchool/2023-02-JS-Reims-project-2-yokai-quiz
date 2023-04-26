@@ -14,7 +14,6 @@ function Game() {
         setTempleData(data);
       });
   }, []);
-
   return switchToTemple === false ? (
     <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
   ) : (
