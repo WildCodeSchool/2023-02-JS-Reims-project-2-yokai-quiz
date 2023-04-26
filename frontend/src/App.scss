@@ -117,9 +117,6 @@ button {
   }
 }
 
-.story {
-  width: 80%;
-}
 .Game {
   display: flex;
   flex-wrap: wrap;
@@ -131,7 +128,7 @@ button {
 }
 .yokai {
   text-align: center;
-  width: 70%;
+
   img {
     height: 10rem;
     width: auto;
@@ -207,10 +204,8 @@ button {
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
-    width: 45%;
   }
   .yokai {
-    width: 45%;
     img {
       height: 20rem;
       width: auto;
