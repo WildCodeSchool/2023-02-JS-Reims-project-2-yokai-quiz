@@ -2,12 +2,12 @@ $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
 
-:root{//modification parametre par defaut de Tooltip
+:root {
+  //modification parametre par defaut de Tooltip
   --rt-opacity: 1;
 }
 * {
   font-family: "Alkatra", cursive;
-
 }
 body {
   margin: 0;
@@ -89,7 +89,6 @@ button {
 }
 
 .buttonTemple {
-
   border-radius: 50%;
   border-color: $accent-color;
   font-size: 0rem;
@@ -102,11 +101,9 @@ button {
 }
 
 .quizz {
-  width: 95%;
   text-align: center;
 }
 .player {
-  width: 70%;
   text-align: center;
 }
 
@@ -115,10 +112,9 @@ button {
   justify-content: space-around;
   flex-wrap: wrap;
   button {
-    width: 45%;
+    padding: 1em;
     margin-bottom: 1rem;
   }
-
 }
 
 .story {
@@ -132,7 +128,6 @@ button {
   text-align: center;
   flex-direction: column;
   align-content: space-around;
-  width: 100%;
 }
 .yokai {
   text-align: center;
@@ -207,7 +202,6 @@ button {
   grid-column-end: 3;
   grid-row-start: 11;
   grid-row-end: 12;
-
 }
 
 @media (orientation: landscape) {
@@ -229,4 +223,3 @@ button {
     justify-content: space-around;
   }
 }
-
