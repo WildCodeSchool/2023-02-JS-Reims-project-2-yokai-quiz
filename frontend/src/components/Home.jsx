@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 import Stories from "./Stories";
+import ComponentShowingTheScore from "./Score";
 
 function Home() {
   return (
@@ -9,6 +10,9 @@ function Home() {
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
       <Stories />
+      <br />
+      <ComponentShowingTheScore />
+
       <p>What's your name Hero ? </p>
       <input type="text" />
       <div className="marque-ver">
