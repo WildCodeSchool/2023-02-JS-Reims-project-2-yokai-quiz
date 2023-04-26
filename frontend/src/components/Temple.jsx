@@ -7,6 +7,19 @@ function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
+  const [quizz, setQuizz] = useState();
+  const amount = 5 + 5;
+  const difficulty = temple.level;
+
+  useEffect(() => {
+    fetch(
+      `https://opentdb.com/api.php?amount=${amount}&category=31&difficulty=${difficulty}&type=multiple`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        setQuizz({ questions: data.results });
+      });
+  }, []);
 
   useEffect(() => {
     document.title = "Temple";
@@ -61,6 +74,7 @@ function Temple({ temple }) {
           setYokaiLife={setYokaiLife}
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
+          quizz={quizz}
         />
       )}
       <div className="player">
