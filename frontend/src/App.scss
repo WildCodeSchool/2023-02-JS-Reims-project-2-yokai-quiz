@@ -2,12 +2,12 @@ $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
 
-:root{//modification parametre par defaut de Tooltip
+:root {
+  //modification parametre par defaut de Tooltip
   --rt-opacity: 1;
 }
 * {
   font-family: "Alkatra", cursive;
-
 }
 body {
   margin: 0;
@@ -89,7 +89,6 @@ button {
 }
 
 .buttonTemple {
-
   border-radius: 50%;
   border-color: $accent-color;
   font-size: 0rem;
@@ -177,11 +176,37 @@ button {
   grid-column-end: 3;
   grid-row-start: 11;
   grid-row-end: 12;
-
 }
 
 @media (orientation: landscape) {
   .infoQuizz {
     width: 45%;
   }
+}
+
+// Stopwatch scss //
+
+.stopwatch-time {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1.5rem;
+  border: 2px red solid;
+  padding: 5px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.stopwatch-buttons button {
+  margin: 20px;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  color: #fff;
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import Temple from "./Temple";
 import Map from "./Map";
+import Stopwatch from "./Chrono";
 
 function Game() {
   const [switchToTemple, setSwitchToTemple] = useState(false);
@@ -15,10 +16,15 @@ function Game() {
       });
   }, []);
 
-  return switchToTemple === false ? (
-    <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
-  ) : (
-    <Temple />
+  return (
+    <>
+      <Stopwatch />
+      {switchToTemple === false ? (
+        <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
+      ) : (
+        <Temple />
+      )}
+    </>
   );
 }
 
