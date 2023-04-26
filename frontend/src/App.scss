@@ -104,7 +104,9 @@ button {
 }
 
 .quizz {
-  width: 75%;
+  text-align: center;
+}
+.player {
   text-align: center;
 }
 
@@ -113,9 +115,30 @@ button {
   justify-content: space-around;
   flex-wrap: wrap;
   button {
-    width: 45%;
+    padding: 1em;
     margin-bottom: 1rem;
   }
+}
+
+.Game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  align-content: space-around;
+}
+.yokai {
+  text-align: center;
+
+  img {
+    height: 10rem;
+    width: auto;
+  }
+}
+.infoQuizz {
+  display: none;
 }
 
 .mapContainer {
@@ -183,6 +206,18 @@ button {
 
 @media (orientation: landscape) {
   .infoQuizz {
-    width: 45%;
+    display: initial;
+  }
+  .yokai {
+    img {
+      height: 20rem;
+      width: auto;
+    }
+  }
+  .Game {
+    display: flex;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
