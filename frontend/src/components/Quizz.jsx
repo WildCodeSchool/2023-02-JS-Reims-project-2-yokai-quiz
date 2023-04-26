@@ -1,23 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-function Quizz() {
-  const [quizz, setQuizz] = useState();
+function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
   const [questionIndex, setQuestionIndex] = useState(0);
 
-  const amount = 5 + 5;
-  const difficulty = "easy";
-
-  useEffect(() => {
-    fetch(
-      `https://opentdb.com/api.php?amount=${amount}&category=31&difficulty=${difficulty}&type=multiple`
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        setQuizz({ questions: data.results });
-      });
-  }, []);
-
-  const passToNextQuestion = () => {
+  const passToNextQuestion = (answer) => {
+    if (answer === quizz.questions[questionIndex].correct_answer) {
+      setYokaiLife(yokaiLife - 1);
+    } else {
+      setPlayerLife(playerLife - 1);
+    }
     setQuestionIndex(questionIndex + 1);
   };
   const answers = [];
@@ -44,7 +36,13 @@ function Quizz() {
         </h2>
         <div className="answers quizz">
           {answers.map((answer) => (
-            <button key={answer} type="button" onClick={passToNextQuestion}>
+            <button
+              key={answer}
+              type="button"
+              onClick={() => {
+                passToNextQuestion(answer);
+              }}
+            >
               {answer
                 .replace(/&quot;/g, `"`)
                 .replace(/&#039;/g, `'`)
@@ -58,4 +56,22 @@ function Quizz() {
   );
 }
 
+Quizz.propTypes = {
+  quizz: PropTypes.shape({
+    questions: PropTypes.arrayOf(
+      PropTypes.shape({
+        category: PropTypes.string.isRequired,
+        correct_answer: PropTypes.string.isRequired,
+        difficulty: PropTypes.string.isRequired,
+        question: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        incorrect_answers: PropTypes.arrayOf,
+      }).isRequired
+    ).isRequired,
+  }).isRequired,
+  setYokaiLife: PropTypes.func.isRequired,
+  setPlayerLife: PropTypes.func.isRequired,
+  yokaiLife: PropTypes.number.isRequired,
+  playerLife: PropTypes.number.isRequired,
+};
 export default Quizz;

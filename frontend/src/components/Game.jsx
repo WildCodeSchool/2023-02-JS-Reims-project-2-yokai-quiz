@@ -7,6 +7,7 @@ import Stopwatch from "./Chrono";
 function Game() {
   const [switchToTemple, setSwitchToTemple] = useState(false);
   const [templeData, setTempleData] = useState([]);
+  const [templeChoice, setTempleChoice] = useState(2);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/temples`)
@@ -15,16 +16,17 @@ function Game() {
         setTempleData(data);
       });
   }, []);
-
+const temple = templeData.find((data) => data.id === templeChoice);
   return (
     <>
       <Stopwatch />
       {switchToTemple === false ? (
         <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
       ) : (
-        <Temple />
+        <Temple temple={temple} />
       )}
     </>
+
   );
 }
 
