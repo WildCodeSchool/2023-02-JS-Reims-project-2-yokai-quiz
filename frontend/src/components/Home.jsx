@@ -4,11 +4,13 @@ import Titre from "../assets/Titre.png";
 
 function Home() {
   return (
-    <section>
+    <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
-      <p>What's your name Hero ? </p>
-      <input type="text" />
+      <div className="login">
+        <p>What's your name Hero ? </p>
+        <input type="text" />
+      </div>
       <div className="marque-ver">
         <div className="msg">
           <p>
