@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
-import Stories from "./Stories";
 
 function Home() {
   return (
-    <section>
+    <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
-      <Stories />
-      <p>What's your name Hero ? </p>
-      <input type="text" />
+      <div className="login">
+        <p>What's your name Hero ? </p>
+        <input type="text" />
+      </div>
       <div className="marque-ver">
         <div className="msg">
           <p>
