@@ -16,17 +16,20 @@ function Game() {
         setTempleData(data);
       });
   }, []);
-const temple = templeData.find((data) => data.id === templeChoice);
+  const temple = templeData.find((data) => data.id === templeChoice);
   return (
     <>
       <Stopwatch />
       {switchToTemple === false ? (
-        <Map setSwitchToTemple={setSwitchToTemple} temples={templeData} />
+        <Map
+          setSwitchToTemple={setSwitchToTemple}
+          temples={templeData}
+          templeChoice={setTempleChoice}
+        />
       ) : (
         <Temple temple={temple} />
       )}
     </>
-
   );
 }
 
