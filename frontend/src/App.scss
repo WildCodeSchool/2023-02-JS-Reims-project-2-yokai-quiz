@@ -2,9 +2,12 @@ $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
 
-
 :root{//modification parametre par defaut de Tooltip
   --rt-opacity: 1;
+}
+* {
+  font-family: "Alkatra", cursive;
+
 }
 body {
   margin: 0;
@@ -14,10 +17,64 @@ body {
 }
 
 .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .Logo {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .Yokai {
+      width: 20rem;
+      display: flex;
+      justify-content: center;
+      margin: 0%;
+    }
+    .ID {
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+    .marque-ver {
+      max-width: 45em;
+      height: 10em;
+      margin: 2em auto;
+      border: 10px solid #f0f0ff;
+      overflow: hidden;
+      box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
+    }
+    .marque-ver > div {
+      padding: 2em;
+      padding-top: 6em; /* meme que height du parent */
+      animation: defilement-ver 30s infinite linear;
+      cursor: pointer;
+    }
+    .marque-ver:hover > div {
+      animation-play-state: paused;
+    }
+    .msg {
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
+    .msg:first-letter {
+      font-weight: 700;
+      color: #f00;
+    }
+
+    @keyframes defilement-ver {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, -100%, 0);
+      }
+    }
+    button {
+      float: right;
+    }
+  }
 }
 .tooltip {
   background-color: $main-color;
@@ -32,6 +89,7 @@ button {
 }
 
 .buttonTemple {
+
   border-radius: 50%;
   border-color: $accent-color;
   font-size: 0rem;
@@ -119,6 +177,7 @@ button {
   grid-column-end: 3;
   grid-row-start: 11;
   grid-row-end: 12;
+
 }
 
 @media (orientation: landscape) {
