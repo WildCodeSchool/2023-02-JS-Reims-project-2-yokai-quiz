@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 
 import Game from "./components/Game";
 import Home from "./components/Home";
-
 import "react-tooltip/dist/react-tooltip.css";
 import "./App.scss";
 
