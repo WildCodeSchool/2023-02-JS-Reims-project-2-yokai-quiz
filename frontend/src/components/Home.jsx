@@ -4,7 +4,6 @@ import Titre from "../assets/Titre.png";
 
 function Home() {
   return (
-
     <section>
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
