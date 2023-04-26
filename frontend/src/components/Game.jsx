@@ -16,9 +16,7 @@ function Game() {
       });
   }, []);
 
-
   const temple = templeData.find((data) => data.id === templeChoice);
-
 
   return switchToTemple === false ? (
     <Map

@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
-import Stories from "./Stories";
-import ComponentShowingTheScore from "./Score";
 
 function Home() {
   const [playerName, setplayerName] = useState(
