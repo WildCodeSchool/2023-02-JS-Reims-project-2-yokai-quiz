@@ -4,15 +4,10 @@ import "../App.scss";
 function Stopwatch() {
   const [time, setTime] = useState(0);
 
-  const [isRunning, setIsRunning] = useState(false);
-
   useEffect(() => {
-    let intervalId;
-    if (isRunning) {
-      intervalId = setInterval(() => setTime(time + 1), 10);
-    }
+    const intervalId = setInterval(() => setTime(time + 1), 10);
     return () => clearInterval(intervalId);
-  }, [isRunning, time]);
+  });
 
   const hours = Math.floor(time / 360000);
 
@@ -22,11 +17,6 @@ function Stopwatch() {
 
   const milliseconds = time % 100;
 
-  const startAndStop = () => {
-    setIsRunning(!isRunning);
-  };
-
-  useEffect(startAndStop, []);
   return (
     <div className="stopwatch-container">
       <p className="stopwatch-time">
