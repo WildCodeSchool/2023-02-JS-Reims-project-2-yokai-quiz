@@ -1,6 +1,7 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
+$grid-map: 20;
 
 :root {
   //modification parametre par defaut de Tooltip
@@ -83,6 +84,13 @@ body {
   background-color: $main-color;
   color: $secondary-color;
   border-radius: 1rem;
+  border: 1px solid $accent-color;
+  .arrow-tooltip{
+    background-color: $accent-color;
+  }
+  img{
+    height: 3rem;
+  }
 }
 
 button {
@@ -94,12 +102,12 @@ button {
 .buttonTemple {
   border-radius: 50%;
   border-color: $accent-color;
-  font-size: 0rem;
   cursor: pointer;
+  width: 3rem;
+  height: 3rem;
   background-color: $secondary-color;
-  z-index: 2;
   img {
-    width: 3rem;
+    width: 2rem;
   }
 }
 
@@ -142,66 +150,51 @@ button {
 }
 
 .mapContainer {
+  margin-top: 10rem;
   position: relative;
-  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(12, 75px);
-  grid-template-rows: repeat(12, 75px);
+  grid-template-columns: repeat($grid-map, 100%/$grid-map);
+  grid-template-rows: repeat($grid-map, 100%/$grid-map);
   .japonMap {
-    width: auto;
-    height: 100%;
+    width: 100%;
     grid-row: 1 / -1;
     grid-column: 1 / -1;
   }
 }
 
 .buttonTemple1 {
-  grid-column-start: 9;
-  grid-column-end: 10;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-start: 17;
+  grid-row-start: 3;
 }
 
 .buttonTemple2 {
-  grid-column-start: 8;
-  grid-column-end: 9;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-column-start: 16;
+  grid-row-start: 8;
 }
 
 .buttonTemple3 {
-  grid-column-start: 8;
-  grid-column-end: 9;
-  grid-row-start: 7;
-  grid-row-end: 8;
+  grid-column-start: 15;
+  grid-row-start: 11;
 }
 
 .buttonTemple4 {
-  grid-column-start: 7;
-  grid-column-end: 8;
-  grid-row-start: 8;
-  grid-row-end: 9;
+  grid-column-start: 13;
+  grid-row-start: 13;
 }
 
 .buttonTemple5 {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 9;
-  grid-row-end: 10;
+  grid-column-start: 11;
+  grid-row-start: 15;
 }
 
 .buttonTemple6 {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 10;
-  grid-row-end: 11;
+  grid-column-start: 7;
+  grid-row-start: 16;
 }
 
 .buttonTemple7 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 11;
-  grid-row-end: 12;
+  grid-column-start: 5;
+  grid-row-start: 18;
 }
 
 @media (orientation: landscape) {
@@ -220,4 +213,26 @@ button {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  .mapContainer {
+    margin-top: initial;
+    height: 100vh;
+    .japonMap {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+// Stopwatch scss //
+
+.stopwatch-time {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1.5rem;
+  border: 2px red solid;
+  padding: 5px;
+  border-radius: 15px 15px 15px 15px;
 }
