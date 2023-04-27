@@ -1,7 +1,11 @@
-const score = 42;
+import PropTypes from "prop-types";
 
-function ComponentShowingTheScore() {
+function Score({ score }) {
   return <p>{score}</p>;
 }
 
-export default ComponentShowingTheScore;
+Score.propTypes = {
+  score: PropTypes.number.isRequired,
+};
+
+export default Score;

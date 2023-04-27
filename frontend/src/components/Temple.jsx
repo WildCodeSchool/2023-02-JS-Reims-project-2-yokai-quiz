@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
+import Score from "./Score";
 
 function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
+  const [score, setScore] = useState(0);
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -75,8 +77,11 @@ function Temple({ temple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
+          setScore={setScore}
+          score={score}
         />
       )}
+      <Score score={score} />
       <div className="player">
         <h1>Player's name</h1>
         <div className="health-icons">
