@@ -84,6 +84,10 @@ body {
   background-color: $main-color;
   color: $secondary-color;
   border-radius: 1rem;
+  border: 1px solid $accent-color;
+  .arrow-tooltip{
+    background-color: $accent-color;
+  }
   img{
     height: 3rem;
   }
