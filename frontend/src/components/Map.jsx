@@ -50,10 +50,13 @@ Map.propTypes = {
   temples: PropTypes.arrayOf(
     PropTypes.shape({
       templeName: PropTypes.string.isRequired,
-      story: PropTypes.string.isRequired,
+      yokaiStory: PropTypes.shape({
+        appearance: PropTypes.string,
+        origin: PropTypes.string,
+      }).isRequired,
       yokaiName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      level: PropTypes.number.isRequired,
+      level: PropTypes.string.isRequired,
       yokaiLife: PropTypes.number.isRequired,
     }).isRequired
   ).isRequired,
