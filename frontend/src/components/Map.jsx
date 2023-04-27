@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Tooltip } from "react-tooltip";
 import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
@@ -8,6 +9,9 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
     templeChoice(id);
     setSwitchToTemple(true);
   }
+  useEffect(() => {
+    document.title = `Yokai Quiz|Map`;
+  }, []);
   return (
     <section className="mapContainer">
       <img src={map} alt="carte du japon" className="japonMap" />

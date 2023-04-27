@@ -22,7 +22,7 @@ function Temple({ temple }) {
   }, []);
 
   useEffect(() => {
-    document.title = "Temple";
+    document.title = `Yokai Quiz|${temple.templeName}`;
   }, []);
 
   useEffect(() => {

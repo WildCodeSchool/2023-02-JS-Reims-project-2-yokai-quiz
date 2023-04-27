@@ -146,14 +146,13 @@ button {
 }
 
 .mapContainer {
+  margin-top: 10rem;
   position: relative;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat($grid-map, 100%/$grid-map);
   grid-template-rows: repeat($grid-map, 100%/$grid-map);
   .japonMap {
-    width: auto;
-    height: 100%;
+    width: 100%;
     grid-row: 1 / -1;
     grid-column: 1 / -1;
   }
@@ -209,5 +208,13 @@ button {
     flex-direction: initial;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .mapContainer {
+    margin-top: initial;
+    height: 100vh;
+    .japonMap {
+      width: auto;
+      height: 100%;
+    }
   }
 }
