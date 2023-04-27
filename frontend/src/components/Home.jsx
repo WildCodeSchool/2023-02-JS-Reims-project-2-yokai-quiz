@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 
@@ -7,12 +7,6 @@ function Home() {
   const [playerName, setPlayerName] = useState(
     localStorage.getItem("playerName") ?? ""
   );
-
-  useEffect(() => {
-    return () => {
-      localStorage.setItem("playerName", playerName);
-    };
-  }, [playerName]);
 
   return (
     <section className="Home">
@@ -23,7 +17,10 @@ function Home() {
         <input
           type="text"
           value={playerName}
-          onChange={(e) => setPlayerName(e.target.value)}
+          onChange={(e) => {
+            setPlayerName(e.target.value);
+            return localStorage.setItem("playerName", playerName);
+          }}
         />
       </div>
 
