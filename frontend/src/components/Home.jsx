@@ -4,12 +4,14 @@ import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 
 function Home() {
-  const [playerName, setplayerName] = useState(
-    localStorage.getItem("playerName")
+  const [playerName, setPlayerName] = useState(
+    localStorage.getItem("playerName") ?? ""
   );
 
   useEffect(() => {
-    localStorage.setItem("playerName", playerName);
+    return () => {
+      localStorage.setItem("playerName", playerName);
+    };
   }, [playerName]);
 
   return (
@@ -21,7 +23,7 @@ function Home() {
         <input
           type="text"
           value={playerName}
-          onChange={(e) => setplayerName(e.target.value)}
+          onChange={(e) => setPlayerName(e.target.value)}
         />
       </div>
 
