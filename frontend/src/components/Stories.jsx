@@ -1,14 +1,17 @@
-const Trashtalk = [
-  "lorem ipsum 1",
-  "lorem ipsum 2",
-  "lorem ipsum 3",
-  "lorem ipsum 4",
-];
+import { useEffect, useState } from "react";
 
 function Stories() {
-  const random = Math.floor(Math.random() * Trashtalk.length);
+  const [trashtalkData, setTrashtalkData] = useState([]);
+  const random = Math.floor(Math.random() * trashtalkData.length);
 
-  return Trashtalk[random];
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/trashtalk`)
+      .then((resp) => resp.json())
+      .then((data) => {
+        setTrashtalkData(data);
+      });
+  }, []);
+  return <div>{trashtalkData[random]}</div>;
 }
 
 export default Stories;
