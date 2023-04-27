@@ -114,6 +114,8 @@ button {
   button {
     padding: 1em;
     margin-bottom: 1rem;
+    width: 10rem;
+    font-size: 1rem;
   }
 }
 
@@ -125,9 +127,18 @@ button {
   text-align: center;
   flex-direction: column;
   align-content: space-around;
+  background-image: url(/src/assets/decorGame.png);
+  background-position: bottom;
+  background-size: 30rem;
+  background-repeat: no-repeat;
+
+  h1 {
+    margin: 0;
+  }
 }
 .yokai {
   text-align: center;
+  margin: 0;
 
   img {
     height: 10rem;
@@ -137,7 +148,11 @@ button {
 .infoQuizz {
   display: none;
 }
-
+.player .yokai {
+  h1 {
+    margin: 0;
+  }
+}
 .mapContainer {
   position: relative;
   height: 100vh;
@@ -212,9 +227,19 @@ button {
     }
   }
   .Game {
+    h1 {
+      margin: 0;
+    }
+  }
+  .answers {
     display: flex;
-    flex-direction: initial;
-    flex-wrap: wrap;
     justify-content: space-around;
+    flex-wrap: wrap;
+    button {
+      padding: 1em;
+      margin-bottom: 1rem;
+      width: 40rem;
+      font-size: 1rem;
+    }
   }
 }
