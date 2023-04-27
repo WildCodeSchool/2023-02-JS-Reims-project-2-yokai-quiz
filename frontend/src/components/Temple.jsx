@@ -22,7 +22,7 @@ function Temple({ temple }) {
   }, []);
 
   useEffect(() => {
-    document.title = "Temple";
+    document.title = `Yokai Quiz|${temple.templeName}`;
   }, []);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function Temple({ temple }) {
       {switchToQuizz === false ? (
         <HistoryOfTheTemple
           setSwitchToQuizz={setSwitchToQuizz}
-          story={temple.story}
+          story={temple.yokaiStory}
         />
       ) : (
         <Quizz
@@ -102,10 +102,13 @@ function Temple({ temple }) {
 Temple.propTypes = {
   temple: PropTypes.shape({
     templeName: PropTypes.string.isRequired,
-    story: PropTypes.string.isRequired,
+    yokaiStory: PropTypes.shape({
+      appearance: PropTypes.string,
+      origin: PropTypes.string,
+    }).isRequired,
     yokaiName: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    level: PropTypes.number.isRequired,
+    level: PropTypes.string.isRequired,
     yokaiLife: PropTypes.number.isRequired,
     yokaiImage: PropTypes.string.isRequired,
   }).isRequired,

@@ -1,6 +1,7 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
+$grid-map: 20;
 
 :root {
   //modification parametre par defaut de Tooltip
@@ -17,10 +18,19 @@ body {
 }
 
 .App {
-  section {
+  display: flex;
+  justify-content: center;
+  .Home {
+    background-image: url(assets/parchemin.png);
+    background-position: bottom;
+    background-size: 50rem;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
+    .login {
+      padding-bottom: 1.5rem;
+    }
     .Logo {
       text-align: center;
       display: flex;
@@ -38,17 +48,15 @@ body {
       padding-top: 0.5rem;
     }
     .marque-ver {
-      max-width: 45em;
-      height: 10em;
+      max-width: 22em;
+      height: 14em;
       margin: 2em auto;
-      border: 10px solid #f0f0ff;
       overflow: hidden;
-      box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
     }
     .marque-ver > div {
       padding: 2em;
       padding-top: 6em; /* meme que height du parent */
-      animation: defilement-ver 30s infinite linear;
+      animation: defilement-ver 60s infinite linear;
       cursor: pointer;
     }
     .marque-ver:hover > div {
@@ -57,10 +65,6 @@ body {
     .msg {
       font-size: 1.5em;
       line-height: 1.5em;
-    }
-    .msg:first-letter {
-      font-weight: 700;
-      color: #f00;
     }
 
     @keyframes defilement-ver {
@@ -80,6 +84,13 @@ body {
   background-color: $main-color;
   color: $secondary-color;
   border-radius: 1rem;
+  border: 1px solid $accent-color;
+  .arrow-tooltip{
+    background-color: $accent-color;
+  }
+  img{
+    height: 3rem;
+  }
 }
 
 button {
@@ -91,12 +102,12 @@ button {
 .buttonTemple {
   border-radius: 50%;
   border-color: $accent-color;
-  font-size: 0rem;
   cursor: pointer;
+  width: 3rem;
+  height: 3rem;
   background-color: $secondary-color;
-  z-index: 2;
   img {
-    width: 3rem;
+    width: 2rem;
   }
 }
 
@@ -139,66 +150,51 @@ button {
 }
 
 .mapContainer {
+  margin-top: 10rem;
   position: relative;
-  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(12, 75px);
-  grid-template-rows: repeat(12, 75px);
+  grid-template-columns: repeat($grid-map, 100%/$grid-map);
+  grid-template-rows: repeat($grid-map, 100%/$grid-map);
   .japonMap {
-    width: auto;
-    height: 100%;
+    width: 100%;
     grid-row: 1 / -1;
     grid-column: 1 / -1;
   }
 }
 
 .buttonTemple1 {
-  grid-column-start: 9;
-  grid-column-end: 10;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-start: 17;
+  grid-row-start: 3;
 }
 
 .buttonTemple2 {
-  grid-column-start: 8;
-  grid-column-end: 9;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-column-start: 16;
+  grid-row-start: 8;
 }
 
 .buttonTemple3 {
-  grid-column-start: 8;
-  grid-column-end: 9;
-  grid-row-start: 7;
-  grid-row-end: 8;
+  grid-column-start: 15;
+  grid-row-start: 11;
 }
 
 .buttonTemple4 {
-  grid-column-start: 7;
-  grid-column-end: 8;
-  grid-row-start: 8;
-  grid-row-end: 9;
+  grid-column-start: 13;
+  grid-row-start: 13;
 }
 
 .buttonTemple5 {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 9;
-  grid-row-end: 10;
+  grid-column-start: 11;
+  grid-row-start: 15;
 }
 
 .buttonTemple6 {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 10;
-  grid-row-end: 11;
+  grid-column-start: 7;
+  grid-row-start: 16;
 }
 
 .buttonTemple7 {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 11;
-  grid-row-end: 12;
+  grid-column-start: 5;
+  grid-row-start: 18;
 }
 
 @media (orientation: landscape) {
@@ -216,5 +212,13 @@ button {
     flex-direction: initial;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .mapContainer {
+    margin-top: initial;
+    height: 100vh;
+    .japonMap {
+      width: auto;
+      height: 100%;
+    }
   }
 }
