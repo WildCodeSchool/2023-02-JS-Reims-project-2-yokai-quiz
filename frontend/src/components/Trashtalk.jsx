@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Stories() {
+function Trashtalk() {
   const [trashtalkData, setTrashtalkData] = useState([]);
   const random = Math.floor(Math.random() * trashtalkData.length);
 
@@ -14,4 +14,4 @@ function Stories() {
   return <div>{trashtalkData[random]}</div>;
 }
 
-export default Stories;
+export default Trashtalk;

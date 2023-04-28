@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Stories from "@components/Stories";
+import Trashtalk from "@components/Trashtalk";
 import Game from "./components/Game";
 import Home from "./components/Home";
 import "react-tooltip/dist/react-tooltip.css";
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/trashtalk" element={<Stories />} />
+        <Route path="/trashtalk" element={<Trashtalk />} />
       </Routes>
     </div>
   );

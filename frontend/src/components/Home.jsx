@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
-import Stories from "./Stories";
+import Stories from "./Trashtalk";
 import ComponentShowingTheScore from "./Score";
 
 function Home() {

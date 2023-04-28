@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
-import Stories from "./Stories";
+import Stories from "./Trashtalk";
 
 function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
