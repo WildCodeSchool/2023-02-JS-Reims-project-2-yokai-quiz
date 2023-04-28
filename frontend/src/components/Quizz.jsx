@@ -22,11 +22,6 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
   return (
     quizz && (
       <>
-        <div className="infoQuizz">
-          <p>{quizz.questions[questionIndex].category}</p>
-          <p>difficulty: {quizz.questions[questionIndex].difficulty}</p>
-          <p>type: {quizz.questions[questionIndex].type}</p>
-        </div>
         <h2 className="question quizz">
           {quizz.questions[questionIndex].question
             .replace(/&quot;/g, `"`)
