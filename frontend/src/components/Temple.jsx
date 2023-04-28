@@ -5,7 +5,6 @@ import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
 import Score from "./Score";
 
-
 function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);

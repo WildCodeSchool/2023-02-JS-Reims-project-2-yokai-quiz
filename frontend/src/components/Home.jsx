@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
-import Trashtalk from "./Trashtalk";
-import ComponentShowingTheScore from "./Score";
 
 function Home() {
   const [playerName, setPlayerName] = useState(
@@ -21,16 +19,10 @@ function Home() {
           value={playerName}
           onChange={(e) => {
             setPlayerName(e.target.value);
-            return localStorage.setItem("playerName", playerName);
+            localStorage.setItem("playerName", playerName);
           }}
         />
       </div>
-
-      <Trashtalk />
-      <br />
-      <ComponentShowingTheScore />
-      <p>What's your name Hero ? </p>
-      <input type="text" />
       <div className="marque-ver">
         <div className="msg">
           <p>
