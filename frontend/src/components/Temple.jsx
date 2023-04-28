@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
+import Stories from "./Trashtalk";
 import Score from "./Score";
 
 function Temple({ temple }) {
@@ -63,6 +64,7 @@ function Temple({ temple }) {
             </svg>
           ))}
         </div>
+        {switchToQuizz === true && <Stories />}
       </div>
 
       {switchToQuizz === false ? (

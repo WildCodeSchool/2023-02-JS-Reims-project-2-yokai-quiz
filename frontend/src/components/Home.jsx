@@ -19,11 +19,10 @@ function Home() {
           value={playerName}
           onChange={(e) => {
             setPlayerName(e.target.value);
-            return localStorage.setItem("playerName", playerName);
+            localStorage.setItem("playerName", playerName);
           }}
         />
       </div>
-
       <div className="marque-ver">
         <div className="msg">
           <p>
