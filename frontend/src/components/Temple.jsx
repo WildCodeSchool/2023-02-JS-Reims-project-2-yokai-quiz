@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
+import Score from "./Score";
+
 
 function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
+  const [score, setScore] = useState(0);
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -23,7 +26,7 @@ function Temple({ temple }) {
   }, []);
 
   useEffect(() => {
-    document.title = "Temple";
+    document.title = `Yokai Quiz|${temple.templeName}`;
   }, []);
 
   useEffect(() => {
@@ -68,7 +71,7 @@ function Temple({ temple }) {
       {switchToQuizz === false ? (
         <HistoryOfTheTemple
           setSwitchToQuizz={setSwitchToQuizz}
-          story={temple.story}
+          story={temple.yokaiStory}
         />
       ) : (
         <Quizz
@@ -77,8 +80,11 @@ function Temple({ temple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
+          setScore={setScore}
+          score={score}
         />
       )}
+      <Score score={score} />
       <div className="player">
         <h1>Player's name</h1>
         <div className="health-icons">
@@ -104,10 +110,13 @@ function Temple({ temple }) {
 Temple.propTypes = {
   temple: PropTypes.shape({
     templeName: PropTypes.string.isRequired,
-    story: PropTypes.string.isRequired,
+    yokaiStory: PropTypes.shape({
+      appearance: PropTypes.string,
+      origin: PropTypes.string,
+    }).isRequired,
     yokaiName: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    level: PropTypes.number.isRequired,
+    level: PropTypes.string.isRequired,
     yokaiLife: PropTypes.number.isRequired,
     yokaiImage: PropTypes.string.isRequired,
   }).isRequired,

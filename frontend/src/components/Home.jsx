@@ -1,20 +1,32 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 import Stories from "./Trashtalk";
 import ComponentShowingTheScore from "./Score";
 
+
 function Home() {
+  const [playerName, setPlayerName] = useState(
+    localStorage.getItem("playerName") ?? ""
+  );
+
   return (
-    <section>
+    <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
-      <Stories />
-      <br />
-      <ComponentShowingTheScore />
+      <div className="login">
+        <p>What's your name Hero ? </p>
+        <input
+          type="text"
+          value={playerName}
+          onChange={(e) => {
+            setPlayerName(e.target.value);
+            return localStorage.setItem("playerName", playerName);
+          }}
+        />
+      </div>
 
-      <p>What's your name Hero ? </p>
-      <input type="text" />
       <div className="marque-ver">
         <div className="msg">
           <p>
