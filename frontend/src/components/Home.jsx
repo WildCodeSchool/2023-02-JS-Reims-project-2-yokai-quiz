@@ -23,7 +23,6 @@ function Home() {
           }}
         />
       </div>
-
       <div className="marque-ver">
         <div className="msg">
           <p>
