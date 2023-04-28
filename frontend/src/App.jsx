@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Trashtalk from "@components/Trashtalk";
+import Trashtalk from "./components/Trashtalk";
 import Game from "./components/Game";
 import Home from "./components/Home";
 import "react-tooltip/dist/react-tooltip.css";
