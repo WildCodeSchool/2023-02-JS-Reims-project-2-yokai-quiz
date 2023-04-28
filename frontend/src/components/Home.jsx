@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
-import Stories from "./Trashtalk";
+import Trashtalk from "./Trashtalk";
 import ComponentShowingTheScore from "./Score";
 
 function Home() {
@@ -9,10 +9,9 @@ function Home() {
     <section>
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
-      <Stories />
+      <Trashtalk />
       <br />
       <ComponentShowingTheScore />
-
       <p>What's your name Hero ? </p>
       <input type="text" />
       <div className="marque-ver">
