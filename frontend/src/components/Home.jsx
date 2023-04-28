@@ -1,14 +1,31 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 import Trashtalk from "./Trashtalk";
 import ComponentShowingTheScore from "./Score";
 
 function Home() {
+  const [playerName, setPlayerName] = useState(
+    localStorage.getItem("playerName") ?? ""
+  );
+
   return (
-    <section>
+    <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
       <img src={kami} alt="kami" className="Yokai" />
+      <div className="login">
+        <p>What's your name Hero ? </p>
+        <input
+          type="text"
+          value={playerName}
+          onChange={(e) => {
+            setPlayerName(e.target.value);
+            return localStorage.setItem("playerName", playerName);
+          }}
+        />
+      </div>
+
       <Trashtalk />
       <br />
       <ComponentShowingTheScore />
