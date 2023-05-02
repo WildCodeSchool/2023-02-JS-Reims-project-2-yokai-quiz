@@ -161,6 +161,21 @@ button {
     grid-column: 1 / -1;
   }
 }
+.score{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .templeScore{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    width: 70rem;
+    img{
+      height: 5rem;
+    }
+  }
+}
 
 .buttonTemple1 {
   grid-column-start: 17;
