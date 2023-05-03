@@ -177,6 +177,34 @@ button {
     grid-column: 1 / -1;
   }
 }
+.score{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .templeScore{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    h4{
+      margin: 0.5rem;
+      text-decoration: underline $accent-color;
+    }
+    p{
+      margin: 0;
+    }
+    figure{
+      border: 1px solid $accent-color;
+      padding: 3rem;
+      padding-bottom: 1rem;
+      padding-top: 0;
+      width: 10rem;
+    }
+    img{
+      height: 5rem;
+    }
+  }
+}
 
 .buttonTemple1 {
   grid-column-start: 17;
@@ -189,17 +217,17 @@ button {
 }
 
 .buttonTemple3 {
-  grid-column-start: 15;
+  grid-column-start: 16;
   grid-row-start: 11;
 }
 
 .buttonTemple4 {
-  grid-column-start: 13;
+  grid-column-start: 14;
   grid-row-start: 13;
 }
 
 .buttonTemple5 {
-  grid-column-start: 11;
+  grid-column-start: 12;
   grid-row-start: 15;
 }
 
@@ -209,7 +237,7 @@ button {
 }
 
 .buttonTemple7 {
-  grid-column-start: 5;
+  grid-column-start: 6;
   grid-row-start: 18;
 }
 .conteneur {
@@ -280,19 +308,19 @@ button {
       height: 100%;
     }
   }
+  .score{
+    .templeScore{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      figure{
+        width: 10rem;
+      }
+    }
+  }
 }
 
-// Stopwatch scss //
-
-.stopwatch-time {
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  position: fixed;
-  bottom: 0.5rem;
-  left: 1.5rem;
-  border: 2px red solid;
-  padding: 5px;
-  border-radius: 15px 15px 15px 15px;
-  display: none;
+.loading{
+  height: 5rem;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  border: 3px solid $accent-color;
 }

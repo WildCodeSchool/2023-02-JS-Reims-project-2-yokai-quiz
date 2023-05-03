@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import Temple from "./Temple";
 import Map from "./Map";
-import Stopwatch from "./Stopwatch";
 
 function Game() {
   const [switchToTemple, setSwitchToTemple] = useState(false);
@@ -19,19 +18,14 @@ function Game() {
 
   const temple = templeData.find((data) => data.id === templeChoice);
 
-  return (
-    <>
-      <Stopwatch />
-      {switchToTemple === false ? (
-        <Map
-          setSwitchToTemple={setSwitchToTemple}
-          temples={templeData}
-          templeChoice={setTempleChoice}
-        />
-      ) : (
-        <Temple temple={temple} />
-      )}
-    </>
+  return switchToTemple === false ? (
+    <Map
+      setSwitchToTemple={setSwitchToTemple}
+      temples={templeData}
+      templeChoice={setTempleChoice}
+    />
+  ) : (
+    <Temple temple={temple} />
   );
 }
 

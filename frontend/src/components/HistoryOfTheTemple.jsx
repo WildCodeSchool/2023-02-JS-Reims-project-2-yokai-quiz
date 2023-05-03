@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+import loading from "../assets/loading.gif";
 
-function HistoryOfTheTemple({ setSwitchToQuizz, story }) {
+function HistoryOfTheTemple({ setSwitchToQuizz, story, checkLoading }) {
   return (
     <>
       <div className="conteneur">
@@ -26,6 +27,7 @@ function HistoryOfTheTemple({ setSwitchToQuizz, story }) {
 
 HistoryOfTheTemple.propTypes = {
   setSwitchToQuizz: PropTypes.func.isRequired,
+  checkLoading: PropTypes.bool.isRequired,
   story: PropTypes.shape({
     appearance: PropTypes.string,
     origin: PropTypes.string,
