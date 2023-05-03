@@ -9,12 +9,11 @@ function Score() {
         setTempleData(data);
       });
   }, []);
-  // const templesData = localStorage.getItem("temples");
-  // const temples = JSON.parse(templesData);
-  // console.log(temples);
+
   return (
     <div className="score">
       <p>{localStorage.getItem("playerName")}</p>
+      <p>best time: {localStorage.getItem("best time")}</p>
       <div className="templeScore">
         {templeData.map((temple) => (
           <figure key={temple.id}>
@@ -24,7 +23,18 @@ function Score() {
               alt={temple.yokaiName}
             />
             <figcaption>{temple.yokaiName}</figcaption>
-            <p>{temple.level}</p>
+            <p>Difficulty: {temple.level}</p>
+            <p>
+              Best time:{" "}
+              {localStorage.getItem(`${temple.templeName} best time`) ??
+                "unmade temple"}
+            </p>
+            {localStorage.getItem(`${temple.templeName} best time`) && (
+              <p>
+                {localStorage.getItem(`${temple.templeName} wrong answer`)}{" "}
+                wrong answer
+              </p>
+            )}
           </figure>
         ))}
       </div>

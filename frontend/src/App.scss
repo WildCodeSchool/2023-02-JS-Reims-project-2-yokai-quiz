@@ -168,9 +168,14 @@ button {
   width: 100%;
   .templeScore{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
-    width: 70rem;
+    width: 90rem;
+    figure{
+      border: 1px solid $accent-color;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
     img{
       height: 5rem;
     }
