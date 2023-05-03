@@ -169,8 +169,8 @@ button {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, calc( 100% / $grid-map));
-  grid-template-rows: repeat($grid-map, calc(100% / $grid-map));
+  grid-template-columns: repeat($grid-map, 0.5fr);
+  grid-template-rows: repeat($grid-map, 1fr);
   .japonMap {
     width: 100%;
     grid-row: 1 / -1;
@@ -189,17 +189,17 @@ button {
 }
 
 .buttonTemple3 {
-  grid-column-start: 15;
+  grid-column-start: 16;
   grid-row-start: 11;
 }
 
 .buttonTemple4 {
-  grid-column-start: 13;
+  grid-column-start: 14;
   grid-row-start: 13;
 }
 
 .buttonTemple5 {
-  grid-column-start: 11;
+  grid-column-start: 12;
   grid-row-start: 15;
 }
 
@@ -209,7 +209,7 @@ button {
 }
 
 .buttonTemple7 {
-  grid-column-start: 5;
+  grid-column-start: 6;
   grid-row-start: 18;
 }
 
@@ -247,6 +247,13 @@ button {
       height: 100%;
     }
   }
+}
+
+.loading{
+  height: 5rem;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  border: 3px solid $accent-color;
 }
 
 .trashtalk{

@@ -12,6 +12,7 @@ function Temple({ temple }) {
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
   const [score, setScore] = useState(0);
+  const [loading, setLoading] = useState(false);
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -22,6 +23,7 @@ function Temple({ temple }) {
       .then((resp) => resp.json())
       .then((data) => {
         setQuizz({ questions: data.results });
+        setLoading(true);
       });
   }, []);
 
@@ -73,6 +75,7 @@ function Temple({ temple }) {
         <HistoryOfTheTemple
           setSwitchToQuizz={setSwitchToQuizz}
           story={temple.yokaiStory}
+          checkLoading={loading}
         />
       ) : (
         <Quizz
