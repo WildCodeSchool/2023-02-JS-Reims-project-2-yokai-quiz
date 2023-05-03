@@ -87,7 +87,7 @@ function Temple({ temple }) {
       )}
       <Score score={score} />
       <div className="player">
-        <h1>Player's name</h1>
+        <h1>{localStorage.getItem("playerName")}</h1>
         <div className="health-icons">
           {Array.from({ length: playerLife }, (_, index) => (
             <svg
