@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Trashtalk from "./Trashtalk";
-import Score from "./Score";
 import Stopwatch from "./Stopwatch";
 
 function Temple({ temple, setSwitchToTemple }) {
