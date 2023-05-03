@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
-import Score from "./Score";
 import Stopwatch from "./Stopwatch";
 
 function Temple({ temple }) {
@@ -94,7 +93,6 @@ function Temple({ temple }) {
           score={score}
         />
       )}
-      <Score score={score} />
       <div className="player">
         <h1>{localStorage.getItem("playerName")}</h1>
         <div className="health-icons">
