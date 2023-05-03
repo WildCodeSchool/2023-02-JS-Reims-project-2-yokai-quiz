@@ -16,11 +16,13 @@ function HistoryOfTheTemple({ setSwitchToQuizz, story, checkLoading }) {
           </div>
         </div>
       </div>
-      <div className="button">
+      {checkLoading === true ? (
         <button onClick={() => setSwitchToQuizz(true)} type="button">
-          skip⇒
+          Continue ⇒
         </button>
-      </div>
+      ) : (
+        <img className="loading" src={loading} alt="loading" />
+      )}
     </>
   );
 }
