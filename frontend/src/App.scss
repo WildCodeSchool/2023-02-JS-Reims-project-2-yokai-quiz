@@ -94,6 +94,16 @@ body {
   }
 }
 
+.returnMap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.returnHome {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 button {
   font-size: 2em;
   background-color: $secondary-color;
@@ -169,7 +179,7 @@ button {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, calc( 100% / $grid-map));
+  grid-template-columns: repeat($grid-map, calc(100% / $grid-map));
   grid-template-rows: repeat($grid-map, calc(100% / $grid-map));
   .japonMap {
     width: 100%;
@@ -263,7 +273,7 @@ button {
   border-radius: 15px 15px 15px 15px;
   display: none;
 }
-.trashtalk{
+.trashtalk {
   background-image: url(./assets/bule.png);
   padding: 3rem;
   padding-top: 1rem;
