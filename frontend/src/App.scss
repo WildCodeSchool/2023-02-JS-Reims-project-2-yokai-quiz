@@ -291,6 +291,13 @@ button {
   grid-column-start: 15;
   grid-row-start: 15;
 }
+.loading {
+  height: 5rem;
+  background-color: $secondary-color;
+  border-radius: 50%;
+  border: 3px solid $accent-color;
+}
+
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
@@ -356,10 +363,3 @@ button {
   }
 }
 
-
-.loading {
-  height: 5rem;
-  background-color: $secondary-color;
-  border-radius: 50%;
-  border: 3px solid $accent-color;
-}
