@@ -4,6 +4,7 @@ import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
 import Score from "./Score";
+import Stopwatch from "./Stopwatch";
 
 function Temple({ temple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
@@ -41,6 +42,7 @@ function Temple({ temple }) {
 
   return (
     <div className="Game">
+      <Stopwatch templeName={temple.templeName} yokaiLife={yokaiLife} />
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
         <img

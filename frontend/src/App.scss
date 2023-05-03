@@ -249,27 +249,13 @@ button {
   }
 }
 
-// Stopwatch scss //
-
-.stopwatch-time {
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  position: fixed;
-  bottom: 0.5rem;
-  left: 1.5rem;
-  border: 2px red solid;
-  padding: 5px;
-  border-radius: 15px 15px 15px 15px;
-  display: none;
-}
-
 .loading{
   height: 5rem;
   background-color: $secondary-color;
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
+
 .trashtalk{
   background-image: url(./assets/bule.png);
   padding: 3rem;
