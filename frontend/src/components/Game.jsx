@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import Temple from "./Temple";
 import Map from "./Map";
 
@@ -25,7 +24,7 @@ function Game() {
       templeChoice={setTempleChoice}
     />
   ) : (
-    <Temple temple={temple} />
+    <Temple temple={temple} setSwitchToTemple={setSwitchToTemple} />
   );
 }
 
