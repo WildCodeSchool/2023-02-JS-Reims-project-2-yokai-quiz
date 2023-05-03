@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
-import Stories from "./Trashtalk";
+import Trashtalk from "./Trashtalk";
 import Score from "./Score";
 import Stopwatch from "./Stopwatch";
 
@@ -52,6 +52,7 @@ function Temple({ temple, setSwitchToTemple }) {
       <Stopwatch templeName={temple.templeName} yokaiLife={yokaiLife} />
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
+        {switchToQuizz === true && <Trashtalk />}
         <img
           src={
             temple.yokaiImage
@@ -75,7 +76,6 @@ function Temple({ temple, setSwitchToTemple }) {
             </svg>
           ))}
         </div>
-        {switchToQuizz === true && <Stories />}
       </div>
 
       {switchToQuizz === false ? (
