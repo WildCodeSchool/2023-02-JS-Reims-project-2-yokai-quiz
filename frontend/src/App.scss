@@ -168,13 +168,21 @@ button {
   width: 100%;
   .templeScore{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
-    width: 90rem;
+    h4{
+      margin: 0.5rem;
+      text-decoration: underline $accent-color;
+    }
+    p{
+      margin: 0;
+    }
     figure{
       border: 1px solid $accent-color;
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding: 3rem;
+      padding-bottom: 1rem;
+      padding-top: 0;
+      width: 10rem;
     }
     img{
       height: 5rem;
@@ -239,6 +247,14 @@ button {
     .japonMap {
       width: auto;
       height: 100%;
+    }
+  }
+  .score{
+    .templeScore{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      figure{
+        width: 10rem;
+      }
     }
   }
 }
