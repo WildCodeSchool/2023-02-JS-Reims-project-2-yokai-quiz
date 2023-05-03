@@ -4,6 +4,7 @@ import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
 import Score from "./Score";
+import Stopwatch from "./Stopwatch";
 
 function Temple({ temple, setSwitchToTemple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
@@ -11,6 +12,7 @@ function Temple({ temple, setSwitchToTemple }) {
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
   const [score, setScore] = useState(0);
+  const [loading, setLoading] = useState(false);
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -21,6 +23,7 @@ function Temple({ temple, setSwitchToTemple }) {
       .then((resp) => resp.json())
       .then((data) => {
         setQuizz({ questions: data.results });
+        setLoading(true);
       });
   }, []);
 
@@ -46,6 +49,7 @@ function Temple({ temple, setSwitchToTemple }) {
       >
         Return Map
       </button>
+      <Stopwatch templeName={temple.templeName} yokaiLife={yokaiLife} />
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
         <img
@@ -78,6 +82,7 @@ function Temple({ temple, setSwitchToTemple }) {
         <HistoryOfTheTemple
           setSwitchToQuizz={setSwitchToQuizz}
           story={temple.yokaiStory}
+          checkLoading={loading}
         />
       ) : (
         <Quizz
