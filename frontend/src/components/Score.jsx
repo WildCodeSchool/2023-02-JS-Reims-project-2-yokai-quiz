@@ -63,7 +63,12 @@ function Score() {
                     localStorage.getItem(`${temple.templeName} best time`)
                   )}
                 </p>
-                <p>test</p>
+                <p>
+                  {localStorage.getItem(
+                    `${temple.templeName} incorrect answers`
+                  )}{" "}
+                  all incorrect answers
+                </p>
               </>
             ) : (
               <p>Best time: no time</p>
