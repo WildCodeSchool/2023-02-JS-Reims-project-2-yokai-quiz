@@ -153,8 +153,8 @@ button {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, calc(100% / $grid-map));
-  grid-template-rows: repeat($grid-map, calc(100% / $grid-map));
+  grid-template-columns: repeat($grid-map, 1fr);
+  grid-template-rows: repeat($grid-map, 1fr);
   .japonMap {
     width: 100%;
     grid-row: 1 / -1;
