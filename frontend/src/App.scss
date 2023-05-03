@@ -178,6 +178,34 @@ button {
     grid-column: 1 / -1;
   }
 }
+.score{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .templeScore{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    h4{
+      margin: 0.5rem;
+      text-decoration: underline $accent-color;
+    }
+    p{
+      margin: 0;
+    }
+    figure{
+      border: 1px solid $accent-color;
+      padding: 3rem;
+      padding-bottom: 1rem;
+      padding-top: 0;
+      width: 10rem;
+    }
+    img{
+      height: 5rem;
+    }
+  }
+}
 
 .buttonTemple1 {
   grid-column-start: 17;
@@ -255,7 +283,14 @@ button {
       height: 100%;
     }
   }
-  
+  .score{
+    .templeScore{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      figure{
+        width: 10rem;
+      }
+    }
+  }
 }
 
 .loading{
