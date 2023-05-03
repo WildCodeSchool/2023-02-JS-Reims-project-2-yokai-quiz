@@ -51,6 +51,7 @@ body {
       max-width: 22em;
       height: 14em;
       margin: 2em auto;
+
       overflow: hidden;
     }
     .marque-ver > div {
@@ -125,6 +126,8 @@ button {
   button {
     padding: 1em;
     margin-bottom: 1rem;
+    width: 10rem;
+    font-size: 1rem;
   }
 }
 
@@ -136,9 +139,18 @@ button {
   text-align: center;
   flex-direction: column;
   align-content: space-around;
+  background-image: url(/src/assets/fondTemple.png);
+  background-position: top;
+  background-size: 30rem;
+  background-repeat: no-repeat;
+
+  h1 {
+    margin: 0;
+  }
 }
 .yokai {
   text-align: center;
+  margin: 0;
 
   img {
     height: 10rem;
@@ -148,13 +160,17 @@ button {
 .infoQuizz {
   display: none;
 }
-
+.player .yokai {
+  h1 {
+    margin: 0;
+  }
+}
 .mapContainer {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, 100% / $grid-map);
-  grid-template-rows: repeat($grid-map, 100% / $grid-map);
+  grid-template-columns: repeat($grid-map, calc( 100% / $grid-map));
+  grid-template-rows: repeat($grid-map, calc(100% / $grid-map));
   .japonMap {
     width: 100%;
     grid-row: 1 / -1;
@@ -203,15 +219,25 @@ button {
   }
   .yokai {
     img {
-      height: 20rem;
+      height: 15rem;
       width: auto;
     }
   }
   .Game {
+    h1 {
+      margin: 0;
+    }
+  }
+  .answers {
     display: flex;
-    flex-direction: initial;
-    flex-wrap: wrap;
     justify-content: space-around;
+    flex-wrap: wrap;
+    button {
+      padding: 1em;
+      margin-bottom: 1rem;
+      width: 40rem;
+      font-size: 1rem;
+    }
   }
   .mapContainer {
     margin-top: initial;
@@ -229,16 +255,23 @@ button {
   text-align: center;
   color: #fff;
   font-size: 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0.5rem;
   left: 1.5rem;
   border: 2px red solid;
   padding: 5px;
   border-radius: 15px 15px 15px 15px;
+  display: none;
 }
 .loading{
   height: 5rem;
   background-color: $secondary-color;
   border-radius: 50%;
   border: 3px solid $accent-color;
+.trashtalk{
+  background-image: url(./assets/bule.png);
+  padding: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-size: 100% 100%;
 }
