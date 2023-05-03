@@ -5,7 +5,7 @@ import Quizz from "./Quizz";
 import Stories from "./Trashtalk";
 import Stopwatch from "./Stopwatch";
 
-function Temple({ temple }) {
+function Temple({ temple, setSwitchToTemple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
@@ -47,6 +47,13 @@ function Temple({ temple }) {
 
   return (
     <div className="Game">
+      <button
+        type="button"
+        className="returnMap"
+        onClick={() => setSwitchToTemple(false)}
+      >
+        Return Map
+      </button>
       <Stopwatch templeName={temple.templeName} yokaiLife={yokaiLife} />
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
@@ -122,12 +129,14 @@ Temple.propTypes = {
       appearance: PropTypes.string,
       origin: PropTypes.string,
     }).isRequired,
+    setSwitchToTemple: PropTypes.func.isRequired,
     yokaiName: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     level: PropTypes.string.isRequired,
     yokaiLife: PropTypes.number.isRequired,
     yokaiImage: PropTypes.string.isRequired,
   }).isRequired,
+  setSwitchToTemple: PropTypes.func.isRequired,
 };
 
 export default Temple;

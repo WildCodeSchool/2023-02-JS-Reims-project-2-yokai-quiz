@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
@@ -76,6 +77,9 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
             </>
           )
       )}
+      <Link to="/" className="returnHome">
+        <button type="button">Return menu</button>
+      </Link>
     </section>
   );
 }
