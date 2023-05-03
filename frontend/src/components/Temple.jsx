@@ -36,6 +36,12 @@ function Temple({ temple }) {
       document.location.href = "/";
     }
     if (yokaiLife <= 0) {
+      const templeValidationScore =
+        localStorage.getItem(`${temple.level} temple`) ?? 0;
+      localStorage.setItem(
+        `${temple.level} temple`,
+        parseInt(templeValidationScore, 10) + 5
+      );
       document.location.href = "/game";
     }
   }, [playerLife, yokaiLife]);

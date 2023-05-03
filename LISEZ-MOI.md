@@ -16,6 +16,10 @@ Sprint 0 (05/04/2023 - 07/04/2023) : Création du concept et première présenta
 
 Sprint 1 (11/04/2023 - 14/04/2023) : création de composants, implementation des api, création des boutons temple & création du quiz
 
+Sprint 2 (17/04/2023 - 21/04/2023) : Création de composants, implémentation du css, modifications d'api pour integrer des images, transert de props, gestion de states et de useEffects.
+
+Sprint 3 (24/04/2023 - 28/04/2023) : Création de composants, ajouts de css, modifications d'api pour integrer des descriptions, transert de props, gestion de states et de useEffects, creation de local storage.
+
 ## Concept
 
 Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
