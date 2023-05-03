@@ -4,6 +4,7 @@ import Game from "./components/Game";
 import Home from "./components/Home";
 import "react-tooltip/dist/react-tooltip.css";
 import "./App.scss";
+import Score from "./components/Score";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/trashtalk" element={<Trashtalk />} />
+        <Route path="/score" element={<Score />} />
       </Routes>
     </div>
   );
