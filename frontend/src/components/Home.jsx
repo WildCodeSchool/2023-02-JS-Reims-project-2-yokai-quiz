@@ -19,7 +19,8 @@ function Home() {
           value={playerName}
           onChange={(e) => {
             setPlayerName(e.target.value);
-            localStorage.setItem("playerName ", e.target.value);
+
+            localStorage.setItem("playerName", e.target.value);
           }}
         />
       </div>

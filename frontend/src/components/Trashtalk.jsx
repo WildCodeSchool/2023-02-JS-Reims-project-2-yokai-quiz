@@ -11,7 +11,11 @@ function Trashtalk() {
         setTrashtalkData(data);
       });
   }, []);
-  return <div>{trashtalkData[random]}</div>;
+  return (
+    <div className="une">
+      <div className="trashtalk">{trashtalkData[random]}</div>
+    </div>
+  );
 }
 
 export default Trashtalk;

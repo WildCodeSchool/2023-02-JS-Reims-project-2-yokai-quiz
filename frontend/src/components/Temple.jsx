@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
-import Stories from "./Trashtalk";
+import Trashtalk from "./Trashtalk";
 import Score from "./Score";
 
 function Temple({ temple }) {
@@ -41,6 +41,7 @@ function Temple({ temple }) {
     <div className="Game">
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
+        {switchToQuizz === true && <Trashtalk />}
         <img
           src={
             temple.yokaiImage
@@ -64,7 +65,6 @@ function Temple({ temple }) {
             </svg>
           ))}
         </div>
-        {switchToQuizz === true && <Stories />}
       </div>
 
       {switchToQuizz === false ? (
@@ -85,7 +85,7 @@ function Temple({ temple }) {
       )}
       <Score score={score} />
       <div className="player">
-        <h1>Player's name</h1>
+        <h1>{localStorage.getItem("playerName")}</h1>
         <div className="health-icons">
           {Array.from({ length: playerLife }, (_, index) => (
             <svg
