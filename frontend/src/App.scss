@@ -169,8 +169,8 @@ button {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, 100% / $grid-map);
-  grid-template-rows: repeat($grid-map, 100% / $grid-map);
+  grid-template-columns: repeat($grid-map, calc( 100% / $grid-map));
+  grid-template-rows: repeat($grid-map, calc(100% / $grid-map));
   .japonMap {
     width: 100%;
     grid-row: 1 / -1;
@@ -262,4 +262,11 @@ button {
   padding: 5px;
   border-radius: 15px 15px 15px 15px;
   display: none;
+}
+.trashtalk{
+  background-image: url(./assets/bule.png);
+  padding: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-size: 100% 100%;
 }
