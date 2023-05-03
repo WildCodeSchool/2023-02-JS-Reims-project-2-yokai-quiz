@@ -101,12 +101,13 @@ button {
 }
 
 .buttonTemple {
-  border-radius: 50%;
-  border-color: $accent-color;
   cursor: pointer;
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
+  border-color: $accent-color;
   background-color: $secondary-color;
+  font-size: 0;
   img {
     width: 1rem;
   }
