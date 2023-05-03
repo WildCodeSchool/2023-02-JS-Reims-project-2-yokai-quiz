@@ -12,7 +12,7 @@ function Trashtalk() {
       });
   }, []);
   return (
-    <div className="une">
+    <div className="bulle">
       <div className="trashtalk">{trashtalkData[random]}</div>
     </div>
   );
