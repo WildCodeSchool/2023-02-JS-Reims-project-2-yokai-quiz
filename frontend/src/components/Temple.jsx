@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Trashtalk from "./Trashtalk";
-import Score from "./Score";
 import Stopwatch from "./Stopwatch";
 
 function Temple({ temple, setSwitchToTemple }) {
@@ -36,6 +35,12 @@ function Temple({ temple, setSwitchToTemple }) {
       document.location.href = "/";
     }
     if (yokaiLife <= 0) {
+      const templeValidationScore =
+        localStorage.getItem(`${temple.level} temple`) ?? 0;
+      localStorage.setItem(
+        `${temple.level} temple`,
+        parseInt(templeValidationScore, 10) + 5
+      );
       document.location.href = "/game";
     }
   }, [playerLife, yokaiLife]);
@@ -95,7 +100,6 @@ function Temple({ temple, setSwitchToTemple }) {
           score={score}
         />
       )}
-      <Score score={score} />
       <div className="player">
         <h1>{localStorage.getItem("playerName")}</h1>
         <div className="health-icons">
