@@ -104,11 +104,11 @@ button {
   border-radius: 50%;
   border-color: $accent-color;
   cursor: pointer;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   background-color: $secondary-color;
   img {
-    width: 2rem;
+    width: 1rem;
   }
 }
 
@@ -169,8 +169,8 @@ button {
   margin-top: 10rem;
   position: relative;
   display: grid;
-  grid-template-columns: repeat($grid-map, 0.5fr);
-  grid-template-rows: repeat($grid-map, 1fr);
+  grid-template-columns: repeat($grid-map, calc(100%/$grid-map));
+  grid-template-rows: repeat($grid-map, calc(100%/$grid-map));
   .japonMap {
     width: 100%;
     grid-row: 1 / -1;
@@ -189,33 +189,40 @@ button {
 }
 
 .buttonTemple3 {
-  grid-column-start: 16;
+  grid-column-start: 15;
   grid-row-start: 11;
 }
 
 .buttonTemple4 {
-  grid-column-start: 14;
+  grid-column-start: 13;
   grid-row-start: 13;
 }
 
 .buttonTemple5 {
-  grid-column-start: 12;
+  grid-column-start: 11;
   grid-row-start: 15;
 }
 
 .buttonTemple6 {
   grid-column-start: 7;
-  grid-row-start: 16;
+  grid-row-start: 15;
 }
 
 .buttonTemple7 {
-  grid-column-start: 6;
+  grid-column-start: 5;
   grid-row-start: 18;
 }
 
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
+  }
+  .buttonTemple {
+    width: 3rem;
+    height: 3rem;
+    img {
+      width: 2rem;
+    }
   }
   .yokai {
     img {
@@ -247,6 +254,7 @@ button {
       height: 100%;
     }
   }
+  
 }
 
 .loading{
