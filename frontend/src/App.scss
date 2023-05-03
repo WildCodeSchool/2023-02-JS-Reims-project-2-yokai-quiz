@@ -94,6 +94,16 @@ body {
   }
 }
 
+.returnMap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.returnHome {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 button {
   font-size: 2em;
   background-color: $secondary-color;
