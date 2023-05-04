@@ -73,20 +73,12 @@ function Score() {
             <p>Difficulty: {temple.level}</p>
 
             {localStorage.getItem(`${temple.templeName} best time`) ? (
-              <>
-                <p>
-                  Best time:{" "}
-                  {calcTime(
-                    localStorage.getItem(`${temple.templeName} best time`)
-                  )}
-                </p>
-                <p>
-                  {localStorage.getItem(
-                    `${temple.templeName} incorrect answers`
-                  )}{" "}
-                  all incorrect answers
-                </p>
-              </>
+              <p>
+                Best time:{" "}
+                {calcTime(
+                  localStorage.getItem(`${temple.templeName} best time`)
+                )}
+              </p>
             ) : (
               <p>Best time: no time</p>
             )}
