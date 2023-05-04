@@ -3,13 +3,16 @@ import PropTypes from "prop-types";
 import HistoryOfTheTemple from "./HistoryOfTheTemple";
 import Quizz from "./Quizz";
 import Trashtalk from "./Trashtalk";
+import Score from "./Score";
 import Stopwatch from "./Stopwatch";
 
 function Temple({ temple, setSwitchToTemple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
-  const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
+  const [yokaiLife, setYokaiLife] = useState(0);
+  // const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
+  const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(false);
   const amount = 5 + 5;
   const difficulty = temple.level;
@@ -31,17 +34,7 @@ function Temple({ temple, setSwitchToTemple }) {
 
   useEffect(() => {
     if (playerLife <= 0) {
-      localStorage.setItem("gameover", "gameover");
-      document.location.href = "/score";
-    }
-    if (yokaiLife <= 0) {
-      const templeValidationScore =
-        localStorage.getItem(`${temple.level} temple`) ?? 0;
-      localStorage.setItem(
-        `${temple.level} temple`,
-        parseInt(templeValidationScore, 10) + 5
-      );
-      document.location.href = "/game";
+      document.location.href = "/";
     }
   }, [playerLife, yokaiLife]);
 
@@ -96,8 +89,11 @@ function Temple({ temple, setSwitchToTemple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
+          setScore={setScore}
+          score={score}
         />
       )}
+      <Score score={score} />
       <div className="player">
         <h1>{localStorage.getItem("playerName")}</h1>
         <div className="health-icons">
@@ -116,6 +112,14 @@ function Temple({ temple, setSwitchToTemple }) {
           ))}
         </div>
       </div>
+      {yokaiLife <= 0 && (
+        <div className="popup">
+          <h1>Temple ... purifier passer au prochain temple</h1>
+          <button type="button" onClick={() => setSwitchToTemple(false)}>
+            Map
+          </button>
+        </div>
+      )}
     </div>
   );
 }
