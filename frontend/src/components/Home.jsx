@@ -53,23 +53,22 @@ function Home() {
       <Link to="/game">
         <button type="button">Start</button>
       </Link>
-      <div className="buttonGame">
-        <Link to="/score">
-          <button type="button" className="buttonScore" path="/score">
-            Score
-          </button>
-        </Link>
-        <button
-          type="button"
-          className="buttonClear"
-          onClick={() => {
-            localStorage.clear();
-            setPlayerName("");
-          }}
-        >
-          Reset
+
+      <Link to="/score">
+        <button type="button" className="scoreButton" path="/score">
+          Score
         </button>
-      </div>
+      </Link>
+      <button
+        type="button"
+        className="resetButton"
+        onClick={() => {
+          localStorage.clear();
+          setPlayerName("");
+        }}
+      >
+        Reset
+      </button>
     </section>
   );
 }
