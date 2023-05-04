@@ -9,7 +9,7 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
       setYokaiLife(yokaiLife - 1);
       localStorage.setItem(
         "score",
-        parseInt(localStorage.getItem("score"), 10) ?? 0 + 10
+        parseInt(localStorage.getItem("score") ?? 0, 10) + 10
       );
     } else {
       setPlayerLife(playerLife - 1);

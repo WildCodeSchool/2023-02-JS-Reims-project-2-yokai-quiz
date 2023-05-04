@@ -1,6 +1,7 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
+$win: rgb(0, 190, 0);
 $grid-map: 20;
 
 :root {
@@ -87,6 +88,22 @@ body {
   border-radius: 1rem;
   max-width: 80%;
   border: 1px solid $accent-color;
+  z-index: 1;
+  .arrow-tooltip {
+    background-color: $accent-color;
+  }
+  img {
+    height: 3rem;
+  }
+}
+
+.tooltipcheck {
+  background-color: $main-color;
+  color: $secondary-color;
+  border-radius: 1rem;
+  max-width: 80%;
+  border: 1px solid $win;
+  z-index: 1;
   .arrow-tooltip {
     background-color: $accent-color;
   }
@@ -122,9 +139,28 @@ button {
   border-color: $accent-color;
   background-color: $secondary-color;
   font-size: 0;
+  animation-name: temple;
+  animation-duration: 3s;
   img {
     width: 1rem;
   }
+}
+.buttonTemple-check {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 3px solid $win;
+  background-color: $secondary-color;
+  font-size: 0;
+  animation-name: temple;
+  animation-duration: 3s;
+  img {
+    width: 1rem;
+  }
+}
+@keyframes temple {
+  0% {opacity: 0;}
 }
 .rulesButton {
   cursor: pointer;
@@ -217,10 +253,10 @@ button {
     width: auto;
   }
 }
-
 audio {
   display: none;
 }
+
 .infoQuizz {
   display: none;
 }
@@ -230,6 +266,9 @@ audio {
   }
 }
 .mapContainer {
+  .fleurs {
+    display: none;
+  }
   margin-top: 10rem;
   position: relative;
   display: grid;
@@ -343,6 +382,7 @@ audio {
   background-color: $accent-color;
   color: $secondary-color;
 }
+
 .musicButton {
   position: fixed;
   right: 4.8rem;
@@ -352,6 +392,7 @@ audio {
   background-color: $accent-color;
   color: $secondary-color;
 }
+
 .buttonScore {
   grid-column-start: 15;
   grid-column-end: 16;
@@ -366,11 +407,11 @@ audio {
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
-
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
   }
+
   .musicButton {
     right: 13rem;
     bottom: 1rem;
@@ -380,6 +421,13 @@ audio {
     top: 0.5rem;
   }
   .buttonTemple {
+    width: 3rem;
+    height: 3rem;
+    img {
+      width: 2rem;
+    }
+  }
+  .buttonTemple-check {
     width: 3rem;
     height: 3rem;
     img {
@@ -418,7 +466,6 @@ audio {
       margin: 0;
     }
   }
-
   .answers {
     display: flex;
     justify-content: space-around;
@@ -433,6 +480,13 @@ audio {
   .mapContainer {
     margin-top: initial;
     height: 100vh;
+    .fleurs {
+      display: initial;
+      position: absolute;
+      width: 75%;
+      right: -33rem;
+      top: 0rem;
+    }
     .japonMap {
       width: auto;
       height: 100%;
