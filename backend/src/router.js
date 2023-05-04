@@ -7,7 +7,7 @@ const itemControllers = require("./controllers/itemControllers");
 const temples = [
   {
     id: 1,
-    templeName: "Temple of Hahakigami",
+    templeName: "Danzaku",
     yokaiStory: {
       appearance:
         "A hahakigami is a tsukumogami which takes up residence in a broom. They can sometimes be seen on cold, windy late autumn mornings, sweeping wildly at the blowing leaves.",
@@ -21,7 +21,7 @@ const temples = [
   },
   {
     id: 2,
-    templeName: "Temple of Chōchin obake",
+    templeName: "Zuigan-ji",
     yokaiStory: {
       appearance:
         " When a paper lantern, or a chōchin, reaches an advanced age, it may transform into a chōchin obake. The paper of the lantern splits along one of its wooden ribs, forming a gaping mouth with a wild, lolling tongue. One or two eyes pop out from the upper half of the lantern. Arms or legs may even sprout from its body as well, although this is rare.",
@@ -35,7 +35,7 @@ const temples = [
   },
   {
     id: 3,
-    templeName: "Temple of Hitotsume kozō",
+    templeName: "Daitoku-ji",
     yokaiStory: {
       appearance:
         "Child-like and mischievous, hitotsume kozō are little one-eyed goblins that are well-known in all parts of Japan. They wear shaved heads and robes, like tiny Buddhist monks. They have long red tongues and a single, enormous eye.",
@@ -49,7 +49,7 @@ const temples = [
   },
   {
     id: 4,
-    templeName: "Temple of Karakasa kozō",
+    templeName: "Zojo-ji",
     yokaiStory: {
       appearance:
         "These silly looking yōkai are transformations of Chinese-style oiled-paper umbrellas. They have a single large eye, a long, protruding tongue, and either one or two legs upon which they hop around wildly.",
@@ -63,7 +63,7 @@ const temples = [
   },
   {
     id: 5,
-    templeName: "Temple of Kappa",
+    templeName: "Kawaradera",
     yokaiStory: {
       appearance:
         "Kappa are aquatic, reptilian humanoids who inhabit the rivers and streams flowing over Japan. Clumsy on land, they are at home in the water, and thrive during the warm months. Kappa are generally the size and shape of a human child, yet despite their small stature they are physically stronger than a grown man. Their scaly skin ranges from a deep, earthy green to bright reds and even blue. ",
@@ -77,7 +77,7 @@ const temples = [
   },
   {
     id: 6,
-    templeName: "Temple of Kudagitsune",
+    templeName: "Fushimi Inari",
     yokaiStory: {
       appearance:
         "Kudagitsune are a type of tsukimono—a spirit that can possess and manipulate humans. They are a breed of tiny, thin, magical foxes, about the size of a rat. They are usually found in the service of sorcerers and fortune tellers. Because of their diminutive size, they can be conveniently hidden on the body, tucked in a sleeve or pocket, or carried inside of a matchbox or a bamboo pipe (from which they get their name).",
@@ -91,7 +91,7 @@ const temples = [
   },
   {
     id: 7,
-    templeName: "Temple of Oni",
+    templeName: "Setsubun",
     yokaiStory: {
       appearance:
         "Oni are one the greatest icons of Japanese folklore. They are large and scary, standing taller than the tallest man, and sometimes taller than trees. ",
