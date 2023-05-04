@@ -25,7 +25,7 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
     answers.push(quizz.questions[questionIndex].correct_answer);
     answers.push(...quizz.questions[questionIndex].incorrect_answers);
 
-    answers.sort(() => Math.random() - 0.5);
+    // answers.sort(() => Math.random() - 0.5);
   }
   return (
     quizz && (

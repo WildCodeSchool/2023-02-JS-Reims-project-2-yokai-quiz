@@ -335,6 +335,23 @@ button {
   border: 3px solid $accent-color;
 }
 
+.win{
+  background-color: #f8e8d8;
+  color: #383637;
+  border-radius: 1rem;
+  border: 5px solid $accent-color;
+  position: fixed;
+  top: 20rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 7rem;
+  button{
+    color: $secondary-color;
+    background-color: $main-color;
+    border: 3px solid $accent-color;
+  }
+}
+
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
@@ -409,8 +426,15 @@ button {
     right: 1rem;
   }
   .conteneur {
-  .conteneur-flex{
-    flex-flow: row wrap;
+    .conteneur-flex{
+      flex-flow: row wrap;
+    }
   }
-}}
+  .win{
+    top: 25rem;
+    left: 4rem;
+    right: 4rem;
+    bottom: 6rem;
+  }
+}
 

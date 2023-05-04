@@ -41,12 +41,19 @@ function Temple({ temple, setSwitchToTemple }) {
         `${temple.level} temple`,
         parseInt(templeValidationScore, 10) + 5
       );
-      document.location.href = "/game";
     }
   }, [playerLife, yokaiLife]);
 
   return (
     <div className="Game">
+      {yokaiLife < 1 && (
+        <div className="win">
+          <h1>Win</h1>
+          <button type="button" onClick={() => setSwitchToTemple(false)}>
+            continue
+          </button>
+        </div>
+      )}
       <button
         type="button"
         className="returnMap"
