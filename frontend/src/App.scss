@@ -284,7 +284,7 @@ button {
   padding-top: 5rem;
   .conteneur-flex {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     margin: -10px;
     div {
@@ -301,17 +301,25 @@ button {
   color: $main-color;
 }
 
-.buttonGame {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  button {
+
+  .resetButton {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
     margin-left: 1rem;
     border-radius: 1.5rem;
     background-color: $accent-color;
     color: $secondary-color;
   }
-}
+  .scoreButton {
+    position: fixed;
+    right: 5rem;
+    bottom: 1rem;
+    margin-left: 1rem;
+    border-radius: 1.5rem;
+    background-color: $accent-color;
+    color: $secondary-color;
+  }
 .buttonScore {
   grid-column-start: 15;
   grid-column-end: 16;
@@ -392,5 +400,17 @@ button {
       }
     }
   }
-}
+  .resetButton{
+    position: fixed;
+    right: 7rem;
+    left: initial;
+  }
+  .scoreButton{
+    right: 1rem;
+  }
+  .conteneur {
+  .conteneur-flex{
+    flex-flow: row wrap;
+  }
+}}
 
