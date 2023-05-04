@@ -1,6 +1,7 @@
 $main-color: #383637;
 $secondary-color: #f8e8d8;
 $accent-color: #bf0404;
+$win: rgb(0, 190, 0);
 $grid-map: 20;
 
 :root {
@@ -85,7 +86,24 @@ body {
   background-color: $main-color;
   color: $secondary-color;
   border-radius: 1rem;
+  max-width: 80%;
   border: 1px solid $accent-color;
+  z-index: 1;
+  .arrow-tooltip {
+    background-color: $accent-color;
+  }
+  img {
+    height: 3rem;
+  }
+}
+
+.tooltipcheck {
+  background-color: $main-color;
+  color: $secondary-color;
+  border-radius: 1rem;
+  max-width: 80%;
+  border: 1px solid $win;
+  z-index: 1;
   .arrow-tooltip {
     background-color: $accent-color;
   }
@@ -102,7 +120,7 @@ body {
 }
 .returnHome {
   position: absolute;
-  top: 1rem;
+  top: -7rem;
   left: 1rem;
 }
 button {
@@ -121,9 +139,39 @@ button {
   border-color: $accent-color;
   background-color: $secondary-color;
   font-size: 0;
+  animation-name: temple;
+  animation-duration: 3s;
   img {
     width: 1rem;
   }
+}
+.buttonTemple-check {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 3px solid $win;
+  background-color: $secondary-color;
+  font-size: 0;
+  animation-name: temple;
+  animation-duration: 3s;
+  img {
+    width: 1rem;
+  }
+}
+@keyframes temple {
+  0% {opacity: 0;}
+}
+.rulesButton {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border-color: $accent-color;
+  background-color: $secondary-color;
+  position: absolute;
+  top: -7rem;
+  right: 1rem;
 }
 
 .quizz {
@@ -197,6 +245,7 @@ button {
     width: auto;
   }
 }
+
 .infoQuizz {
   display: none;
 }
@@ -367,6 +416,23 @@ button {
       width: 2rem;
     }
   }
+  .buttonTemple-check {
+    width: 3rem;
+    height: 3rem;
+    img {
+      width: 2rem;
+    }
+  }
+  .returnHome {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .rulesButton {
+    top: 1rem;
+    right: -5rem;
+  }
+
   .bulle {
     padding-left: 55rem;
   }
@@ -389,7 +455,6 @@ button {
       margin: 0;
     }
   }
-
   .answers {
     display: flex;
     justify-content: space-around;
@@ -426,15 +491,8 @@ button {
     right: 1rem;
   }
   .conteneur {
-    .conteneur-flex{
-      flex-flow: row wrap;
-    }
+  .conteneur-flex{
+    flex-flow: row wrap;
   }
-  .win{
-    top: 25rem;
-    left: 4rem;
-    right: 4rem;
-    bottom: 6rem;
-  }
-}
+}}
 
