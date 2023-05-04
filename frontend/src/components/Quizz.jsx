@@ -34,6 +34,7 @@ function Quizz({
 
     /*    answers.sort(() => Math.random() - 0.5); */
   }
+
   return (
     quizz && (
       <>
