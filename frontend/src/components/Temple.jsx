@@ -8,8 +8,7 @@ import Stopwatch from "./Stopwatch";
 
 function Temple({ temple, setSwitchToTemple }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
-  const [yokaiLife, setYokaiLife] = useState(0);
-  // const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
+  const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
   const [score, setScore] = useState(0);
