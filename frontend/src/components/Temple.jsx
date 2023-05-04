@@ -114,7 +114,7 @@ function Temple({ temple, setSwitchToTemple }) {
       </div>
       {yokaiLife <= 0 && (
         <div className="popup">
-          <h1>Temple ... purifier passer au prochain temple</h1>
+          <h1>Temple {temple.templeName} purifier passer au prochain temple</h1>
           <button type="button" onClick={() => setSwitchToTemple(false)}>
             Map
           </button>
