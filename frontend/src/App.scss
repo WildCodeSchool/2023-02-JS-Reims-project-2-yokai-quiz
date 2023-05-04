@@ -85,6 +85,7 @@ body {
   background-color: $main-color;
   color: $secondary-color;
   border-radius: 1rem;
+  max-width: 80%;
   border: 1px solid $accent-color;
   .arrow-tooltip {
     background-color: $accent-color;
@@ -102,7 +103,7 @@ body {
 }
 .returnHome {
   position: absolute;
-  top: 1rem;
+  top: -7rem;
   left: 1rem;
 }
 button {
@@ -124,6 +125,17 @@ button {
   img {
     width: 1rem;
   }
+}
+.rulesButton {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border-color: $accent-color;
+  background-color: $secondary-color;
+  position: absolute;
+  top: -7rem;
+  right: 1rem;
 }
 
 .quizz {
@@ -350,6 +362,16 @@ button {
       width: 2rem;
     }
   }
+  .returnHome {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .rulesButton {
+    top: 1rem;
+    right: -5rem;
+  }
+
   .bulle {
     padding-left: 55rem;
   }
@@ -413,4 +435,3 @@ button {
     flex-flow: row wrap;
   }
 }}
-
