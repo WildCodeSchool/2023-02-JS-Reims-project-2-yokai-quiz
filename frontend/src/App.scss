@@ -86,6 +86,7 @@ body {
   color: $secondary-color;
   border-radius: 1rem;
   border: 1px solid $accent-color;
+  z-index: 1;
   .arrow-tooltip {
     background-color: $accent-color;
   }
@@ -121,9 +122,14 @@ button {
   border-color: $accent-color;
   background-color: $secondary-color;
   font-size: 0;
+  animation-name: temple;
+  animation-duration: 3s;
   img {
     width: 1rem;
   }
+}
+@keyframes temple {
+  0% {opacity: 0;}
 }
 
 .quizz {
@@ -197,6 +203,7 @@ button {
     width: auto;
   }
 }
+
 .infoQuizz {
   display: none;
 }
@@ -372,7 +379,6 @@ button {
       margin: 0;
     }
   }
-
   .answers {
     display: flex;
     justify-content: space-around;
