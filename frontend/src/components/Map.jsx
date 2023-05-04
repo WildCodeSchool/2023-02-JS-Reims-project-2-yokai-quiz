@@ -4,6 +4,7 @@ import { Tooltip } from "react-tooltip";
 import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
 import map from "../assets/map_jap.png";
+import fleurs from "../assets/fleur.png";
 
 function Map({ temples, setSwitchToTemple, templeChoice }) {
   function click(id) {
@@ -40,6 +41,9 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
   }
   return (
     <section className="mapContainer">
+      <div className="fleur">
+        <img src={fleurs} className="fleurs" alt="fleurs" />
+      </div>
       <img src={map} alt="carte du japon" className="japonMap" />
       {temples.map(
         (temple) =>
@@ -77,22 +81,6 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
             </>
           )
       )}
-      <button type="button" key="rulesButton" className="rulesButton">
-        ?
-      </button>
-      <Tooltip
-        className="tooltip"
-        classNameArrow="arrow-tooltip"
-        anchorSelect=".rulesButton"
-      >
-        <h3>Rules</h3>
-        <p>
-          To defeat the final Yokai, you must first purify two low-level yokai
-          temples and then two higher-level ones.
-        </p>
-        <p>Courage, {localStorage.getItem("playerName")}.</p>
-      </Tooltip>
-
       <Link to="/" className="returnHome">
         <button type="button">Return menu</button>
       </Link>

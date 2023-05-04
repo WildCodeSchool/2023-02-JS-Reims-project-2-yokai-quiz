@@ -174,7 +174,7 @@ button {
     margin: 0;
   }
 }
-.game-over{
+.game-over {
   color: $accent-color;
   background-color: $secondary-color;
   border: 3px solid $accent-color;
@@ -187,18 +187,26 @@ button {
   animation-direction: alternate;
 }
 
-.over{
+.over {
   animation-name: over;
   animation-duration: 30s;
   animation-fill-mode: forwards;
 }
-@keyframes game-over{
-  from   {opacity: 1;}
-  to {opacity: 0;}
+@keyframes game-over {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 @keyframes over {
-  from   {opacity: 1;}
-  to {opacity: 0;}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 .yokai {
   text-align: center;
@@ -218,6 +226,9 @@ button {
   }
 }
 .mapContainer {
+  .fleurs {
+    display: none;
+  }
   margin-top: 10rem;
   position: relative;
   display: grid;
@@ -313,25 +324,24 @@ button {
   color: $main-color;
 }
 
-
-  .resetButton {
-    position: fixed;
-    left: 1rem;
-    bottom: 1rem;
-    margin-left: 1rem;
-    border-radius: 1.5rem;
-    background-color: $accent-color;
-    color: $secondary-color;
-  }
-  .scoreButton {
-    position: fixed;
-    right: 5rem;
-    bottom: 1rem;
-    margin-left: 1rem;
-    border-radius: 1.5rem;
-    background-color: $accent-color;
-    color: $secondary-color;
-  }
+.resetButton {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 1.5rem;
+  background-color: $accent-color;
+  color: $secondary-color;
+}
+.scoreButton {
+  position: fixed;
+  right: 5rem;
+  bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 1.5rem;
+  background-color: $accent-color;
+  color: $secondary-color;
+}
 .buttonScore {
   grid-column-start: 15;
   grid-column-end: 16;
@@ -351,9 +361,9 @@ button {
   .infoQuizz {
     display: initial;
   }
-  .returnMap{
+  .returnMap {
     font-size: 2rem;
-    top: 0.5rem
+    top: 0.5rem;
   }
   .buttonTemple {
     width: 3rem;
@@ -378,7 +388,7 @@ button {
   .trashtalk {
     background-image: url(./assets/bule.png);
     padding-top: 1rem;
-    color: $secondary-color
+    color: $secondary-color;
   }
   .yokai {
     img {
@@ -409,6 +419,13 @@ button {
   .mapContainer {
     margin-top: initial;
     height: 100vh;
+    .fleurs {
+      display: initial;
+      position: absolute;
+      width: 75%;
+      right: -33rem;
+      top: 0rem;
+    }
     .japonMap {
       width: auto;
       height: 100%;
@@ -422,16 +439,17 @@ button {
       }
     }
   }
-  .resetButton{
+  .resetButton {
     position: fixed;
     right: 7rem;
     left: initial;
   }
-  .scoreButton{
+  .scoreButton {
     right: 1rem;
   }
   .conteneur {
-  .conteneur-flex{
-    flex-flow: row wrap;
+    .conteneur-flex {
+      flex-flow: row wrap;
+    }
   }
-}}
+}
