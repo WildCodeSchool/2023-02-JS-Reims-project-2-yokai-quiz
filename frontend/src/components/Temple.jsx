@@ -49,6 +49,13 @@ function Temple({ temple, setSwitchToTemple }) {
       {yokaiLife < 1 && (
         <div className="win">
           <h1>Win</h1>
+          <p>
+            Congratulations on your victory! Whatever the field in which you
+            have succeeded, it is an accomplishment to be celebrated. Keep
+            working hard and aiming higher to achieve your future goals. Victory
+            is a beautiful reward for the efforts you have put in. Enjoy this
+            moment of success and be proud of yourself!
+          </p>
           <button type="button" onClick={() => setSwitchToTemple(false)}>
             continue
           </button>

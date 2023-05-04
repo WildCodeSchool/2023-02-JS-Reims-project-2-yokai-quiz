@@ -49,15 +49,15 @@ function Score() {
         <figure>
           <h4>all score</h4>
           <p>
-            Nombre de temple facile fini:{" "}
+            The number of easy temples finished:{" "}
             {localStorage.getItem("easy temple") / 5}
           </p>
           <p>
-            Nombre de temple medium fini:{" "}
+            The number of medium temples finished:{" "}
             {localStorage.getItem("medium temple") / 5}
           </p>
           <p>
-            Nombre de temple hard fini:{" "}
+            The number of hard temples finished:{" "}
             {localStorage.getItem("hard temple") / 5}
           </p>
           <p>Score: {localStorage.getItem("score")}</p>

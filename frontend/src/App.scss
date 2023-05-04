@@ -399,6 +399,11 @@ button {
     background-color: $main-color;
     border: 3px solid $accent-color;
   }
+  p{
+    margin: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 @media (orientation: landscape) {
@@ -490,9 +495,16 @@ button {
   .scoreButton{
     right: 1rem;
   }
-  .conteneur {
-  .conteneur-flex{
-    flex-flow: row wrap;
+  .win{
+    p{
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
-}}
+  .conteneur {
+    .conteneur-flex{
+      flex-flow: row wrap;
+    }
+  }
+}
 
