@@ -11,6 +11,7 @@ function Temple({ temple, setSwitchToTemple }) {
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
   const [loading, setLoading] = useState(false);
+  const [malus, setMalus] = useState(4);
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -42,6 +43,9 @@ function Temple({ temple, setSwitchToTemple }) {
         parseInt(templeValidationScore, 10) + 5
       );
       document.location.href = "/game";
+    }
+    if (yokaiLife === 1) {
+      setMalus(Math.floor(Math.random() * 4));
     }
   }, [playerLife, yokaiLife]);
 
@@ -96,6 +100,7 @@ function Temple({ temple, setSwitchToTemple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
+          malus={malus}
         />
       )}
       <div className="player">

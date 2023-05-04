@@ -1,7 +1,14 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
+function Quizz({
+  setYokaiLife,
+  yokaiLife,
+  setPlayerLife,
+  playerLife,
+  quizz,
+  malus,
+}) {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const passToNextQuestion = (answer) => {
@@ -25,7 +32,7 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
     answers.push(quizz.questions[questionIndex].correct_answer);
     answers.push(...quizz.questions[questionIndex].incorrect_answers);
 
-    answers.sort(() => Math.random() - 0.5);
+    /*    answers.sort(() => Math.random() - 0.5); */
   }
   return (
     quizz && (
@@ -38,10 +45,19 @@ function Quizz({ setYokaiLife, yokaiLife, setPlayerLife, playerLife, quizz }) {
             .replace(/&eacute;/g, `é`)}
         </h2>
         <div className="answers quizz">
-          {answers.map((answer) => (
+          {answers.map((answer, i) => (
             <button
               key={answer}
               type="button"
+              className={`${
+                malus === i &&
+                `${quizz.questions[questionIndex].difficulty}-malus`
+              } ${
+                quizz.questions[questionIndex].difficulty === "medium" &&
+                yokaiLife === 1
+                  ? "mediummalus"
+                  : ""
+              }`}
               onClick={() => {
                 passToNextQuestion(answer);
               }}
@@ -76,5 +92,6 @@ Quizz.propTypes = {
   setPlayerLife: PropTypes.func.isRequired,
   yokaiLife: PropTypes.number.isRequired,
   playerLife: PropTypes.number.isRequired,
+  malus: PropTypes.number.isRequired,
 };
 export default Quizz;

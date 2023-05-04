@@ -161,7 +161,7 @@ button {
     margin: 0;
   }
 }
-.game-over{
+.game-over {
   color: $accent-color;
   background-color: $secondary-color;
   border: 3px solid $accent-color;
@@ -174,18 +174,26 @@ button {
   animation-direction: alternate;
 }
 
-.over{
+.over {
   animation-name: over;
   animation-duration: 30s;
   animation-fill-mode: forwards;
 }
-@keyframes game-over{
-  from   {opacity: 1;}
-  to {opacity: 0;}
+@keyframes game-over {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 @keyframes over {
-  from   {opacity: 1;}
-  to {opacity: 0;}
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 .yokai {
   text-align: center;
@@ -325,6 +333,26 @@ button {
   border: 3px solid $accent-color;
 }
 
+.easy-malus {
+  animation-name: malus;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes malus {
+  to {
+    filter: blur(0.4rem);
+  }
+}
+.mediummalus {
+  animation-name: mediummalus;
+  animation-duration: 35s;
+  animation-fill-mode: forwards;
+}
+@keyframes mediummalus {
+  to {
+    filter: blur(0.3rem);
+  }
+}
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
@@ -389,4 +417,3 @@ button {
     }
   }
 }
-
