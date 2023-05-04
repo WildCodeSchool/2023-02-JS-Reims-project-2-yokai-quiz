@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Score() {
   const [templeData, setTempleData] = useState([]);
@@ -28,8 +29,23 @@ function Score() {
   }
   return (
     <div className="score">
-      <p>Player Name: {localStorage.getItem("playerName")}</p>
-      <div className="templeScore">
+      <h1 className={localStorage.getItem("gameover") === "gameover" && "over"}>
+        Player Name: {localStorage.getItem("playerName")}
+      </h1>
+      <Link to="/">
+        {localStorage.getItem("gameover") === "gameover" ? (
+          <button type="button" className="game-over">
+            Game Over
+          </button>
+        ) : (
+          <button type="button">Return menu</button>
+        )}
+      </Link>
+      <div
+        className={`templeScore ${
+          localStorage.getItem("gameover") === "gameover" && "over"
+        }`}
+      >
         <figure>
           <h4>all score</h4>
           <p>
@@ -44,6 +60,7 @@ function Score() {
             Nombre de temple hard fini:{" "}
             {localStorage.getItem("hard temple") / 5}
           </p>
+          <p>Score: {localStorage.getItem("score")}</p>
         </figure>
         {templeData.map((temple) => (
           <figure key={temple.id}>

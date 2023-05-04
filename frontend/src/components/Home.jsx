@@ -5,9 +5,19 @@ import Titre from "../assets/Titre.png";
 
 function Home() {
   const [playerName, setPlayerName] = useState(
-    localStorage.getItem("playerName") ?? ""
+    localStorage.getItem("playerName") === "Nameless"
+      ? ""
+      : localStorage.getItem("playerName")
   );
-
+  if (
+    localStorage.getItem("playerName") == null ||
+    localStorage.getItem("playerName").length < 1
+  ) {
+    localStorage.setItem("playerName", "Nameless");
+  }
+  if (localStorage.getItem("gameover") === "gameover") {
+    localStorage.clear();
+  }
   return (
     <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
@@ -16,6 +26,7 @@ function Home() {
         <p>What's your name Hero ? </p>
         <input
           type="text"
+          placeholder="Player name"
           value={playerName}
           onChange={(e) => {
             setPlayerName(e.target.value);
@@ -53,6 +64,7 @@ function Home() {
           className="buttonClear"
           onClick={() => {
             localStorage.clear();
+            setPlayerName("");
           }}
         >
           Reset
