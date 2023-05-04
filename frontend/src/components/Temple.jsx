@@ -10,7 +10,6 @@ function Temple({ temple, setSwitchToTemple }) {
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
-  const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(false);
   const amount = 5 + 5;
   const difficulty = temple.level;
@@ -32,7 +31,8 @@ function Temple({ temple, setSwitchToTemple }) {
 
   useEffect(() => {
     if (playerLife <= 0) {
-      document.location.href = "/";
+      localStorage.setItem("gameover", "gameover");
+      document.location.href = "/score";
     }
     if (yokaiLife <= 0) {
       const templeValidationScore =
@@ -96,8 +96,6 @@ function Temple({ temple, setSwitchToTemple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
-          setScore={setScore}
-          score={score}
         />
       )}
       <div className="player">

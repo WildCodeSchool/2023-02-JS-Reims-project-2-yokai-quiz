@@ -15,6 +15,10 @@ function Game() {
       });
   }, []);
 
+  if (localStorage.getItem("gameover") === "gameover") {
+    localStorage.clear();
+  }
+
   const temple = templeData.find((data) => data.id === templeChoice);
 
   return switchToTemple === false ? (

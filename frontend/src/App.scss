@@ -109,6 +109,7 @@ button {
   background-color: $secondary-color;
   color: $accent-color;
   border-radius: 1.5rem;
+  cursor: pointer;
 }
 
 .buttonTemple {
@@ -159,6 +160,32 @@ button {
   h1 {
     margin: 0;
   }
+}
+.game-over{
+  color: $accent-color;
+  background-color: $secondary-color;
+  border: 3px solid $accent-color;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  animation-name: game-over;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.over{
+  animation-name: over;
+  animation-duration: 30s;
+  animation-fill-mode: forwards;
+}
+@keyframes game-over{
+  from   {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes over {
+  from   {opacity: 1;}
+  to {opacity: 0;}
 }
 .yokai {
   text-align: center;
