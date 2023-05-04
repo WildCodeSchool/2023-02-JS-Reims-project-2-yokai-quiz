@@ -96,8 +96,9 @@ body {
 
 .returnMap {
   position: absolute;
-  top: 1rem;
+  top: 2.5rem;
   right: 1rem;
+  font-size: 1rem;
 }
 .returnHome {
   position: absolute;
@@ -265,11 +266,12 @@ button {
   }
 }
 .trashtalk {
-  background-image: url(./assets/bule.png);
+  background-image: url(./assets/bulle.png);
   padding: 3rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   background-size: 100% 100%;
+  color: $main-color;
 }
 
 .buttonGame {
@@ -302,6 +304,10 @@ button {
   .infoQuizz {
     display: initial;
   }
+  .returnMap{
+    font-size: 2rem;
+    top: 0.5rem
+  }
   .buttonTemple {
     width: 3rem;
     height: 3rem;
@@ -314,10 +320,8 @@ button {
   }
   .trashtalk {
     background-image: url(./assets/bule.png);
-    padding: 3rem;
     padding-top: 1rem;
-    padding-bottom: 2rem;
-    background-size: 100% 100%;
+    color: $secondary-color
   }
   .yokai {
     img {
