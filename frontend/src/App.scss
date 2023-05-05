@@ -255,6 +255,9 @@ button {
     width: auto;
   }
 }
+audio {
+  display: none;
+}
 
 .infoQuizz {
   display: none;
@@ -381,6 +384,17 @@ button {
   background-color: $accent-color;
   color: $secondary-color;
 }
+
+.musicButton {
+  position: fixed;
+  right: 4.8rem;
+  bottom: 5rem;
+  margin-left: 1rem;
+  border-radius: 1.5rem;
+  background-color: $accent-color;
+  color: $secondary-color;
+}
+
 .buttonScore {
   grid-column-start: 15;
   grid-column-end: 16;
@@ -395,7 +409,6 @@ button {
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
-
 .easy-malus {
   animation-name: malus;
   animation-duration: 3s;
@@ -419,6 +432,11 @@ button {
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
+  }
+
+  .musicButton {
+    right: 13rem;
+    bottom: 1rem;
   }
   .returnMap {
     font-size: 2rem;
