@@ -409,6 +409,28 @@ audio {
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
+.win{
+  background-color: #f8e8d8;
+  color: #383637;
+  border-radius: 1rem;
+  border: 5px solid $accent-color;
+  position: fixed;
+  top: 20rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 10rem;
+  button{
+    color: $secondary-color;
+    background-color: $main-color;
+    border: 3px solid $accent-color;
+  }
+  p{
+    margin: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .easy-malus {
   animation-name: malus;
   animation-duration: 3s;
@@ -531,6 +553,12 @@ audio {
   }
   .scoreButton {
     right: 1rem;
+  }
+  .win{
+    p{
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
   .conteneur {
     .conteneur-flex {

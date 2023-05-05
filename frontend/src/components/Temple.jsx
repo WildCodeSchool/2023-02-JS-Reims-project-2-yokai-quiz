@@ -43,7 +43,6 @@ function Temple({ temple, setSwitchToTemple }) {
         `${temple.level} temple`,
         parseInt(templeValidationScore, 10) + 5
       );
-      document.location.href = "/game";
     }
     if (yokaiLife === 1) {
       setMalus(Math.floor(Math.random() * 4));
@@ -62,6 +61,21 @@ function Temple({ temple, setSwitchToTemple }) {
 
   return (
     <div className="Game">
+      {yokaiLife < 1 && (
+        <div className="win">
+          <h1>Win</h1>
+          <p>
+            Congratulations on your victory! Whatever the field in which you
+            have succeeded, it is an accomplishment to be celebrated. Keep
+            working hard and aiming higher to achieve your future goals. Victory
+            is a beautiful reward for the efforts you have put in. Enjoy this
+            moment of success and be proud of yourself!
+          </p>
+          <button type="button" onClick={() => setSwitchToTemple(false)}>
+            continue
+          </button>
+        </div>
+      )}
       <button
         type="button"
         className="returnMap"
