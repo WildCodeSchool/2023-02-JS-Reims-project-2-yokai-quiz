@@ -7,14 +7,12 @@ import "react-tooltip/dist/react-tooltip.css";
 import "./App.scss";
 
 function App() {
-  const [music, setMusic] = useState(localStorage.getItem("music"));
+  const [music, setMusic] = useState("false");
   const musicHandle = useCallback(() => {
     if (music === "true") {
-      localStorage.setItem("music", "false");
       setMusic("false");
     }
     if (music === "false") {
-      localStorage.setItem("music", "true");
       setMusic("true");
     }
   }, [music, setMusic]);
