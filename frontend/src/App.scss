@@ -440,7 +440,7 @@ audio {
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
-.win{
+.win {
   background-color: #f8e8d8;
   color: #383637;
   border-radius: 1rem;
@@ -451,12 +451,12 @@ audio {
   right: 1rem;
   bottom: 8rem;
   z-index: 3;
-  button{
+  button {
     color: $secondary-color;
     background-color: $main-color;
     border: 3px solid $accent-color;
   }
-  p{
+  p {
     margin: 3rem;
     margin-top: 0;
     margin-bottom: 0;
@@ -595,10 +595,10 @@ audio {
   .scoreButton {
     right: 1rem;
   }
-  .win{
+  .win {
     top: 25rem;
     bottom: 4rem;
-    p{
+    p {
       margin-top: 3rem;
       margin-bottom: 3rem;
     }
