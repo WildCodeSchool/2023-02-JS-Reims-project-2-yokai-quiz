@@ -11,6 +11,8 @@ function Temple({ temple, setSwitchToTemple }) {
   const [playerLife, setPlayerLife] = useState(5);
   const [quizz, setQuizz] = useState();
   const [loading, setLoading] = useState(false);
+  const [malus, setMalus] = useState(4);
+  const [talkMalus, setTalkMalus] = useState("");
   const amount = 5 + 5;
   const difficulty = temple.level;
 
@@ -43,6 +45,19 @@ function Temple({ temple, setSwitchToTemple }) {
       );
       document.location.href = "/game";
     }
+    if (yokaiLife === 1) {
+      setMalus(Math.floor(Math.random() * 4));
+    }
+    if (yokaiLife === 1 && temple.level === "easy") {
+      setTalkMalus(
+        "I've faced tougher opponents in my sleep. All the answers, even the hidden ones, could be correct."
+      );
+    }
+    if (yokaiLife === 1 && temple.level === "medium") {
+      setTalkMalus(
+        "You have 30 seconds to read the answers before everything gets hidden, you big loser !!!"
+      );
+    }
   }, [playerLife, yokaiLife]);
 
   return (
@@ -57,7 +72,7 @@ function Temple({ temple, setSwitchToTemple }) {
       <Stopwatch templeName={temple.templeName} yokaiLife={yokaiLife} />
       <div className="yokai">
         <h1>{temple.yokaiName}</h1>
-        {switchToQuizz === true && <Trashtalk />}
+        {switchToQuizz === true && <Trashtalk talkMalus={talkMalus} />}
         <img
           src={
             temple.yokaiImage
@@ -96,6 +111,8 @@ function Temple({ temple, setSwitchToTemple }) {
           playerLife={playerLife}
           setPlayerLife={setPlayerLife}
           quizz={quizz}
+          malus={malus}
+          setTalkEasymalus={setTalkMalus}
         />
       )}
       <div className="player">
