@@ -21,11 +21,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home musicHandle={musicHandle.bind} />} />
-        <Route path="/game" element={<Game musicHandle={musicHandle.bind} />} />
+        <Route path="/" element={<Home musicHandle={musicHandle.bind()} />} />
+        <Route path="/game" element={<Game musicHandle={musicHandle.bind()} />} />
         <Route
           path="/score"
-          element={<Score musicHandle={musicHandle.bind} />}
+          element={<Score musicHandle={musicHandle.bind()} />}
         />
       </Routes>
       {music === "true" && (
