@@ -160,7 +160,9 @@ button {
   }
 }
 @keyframes temple {
-  0% {opacity: 0;}
+  0% {
+    opacity: 0;
+  }
 }
 .rulesButton {
   cursor: pointer;
@@ -482,13 +484,15 @@ button {
   .mapContainer {
     margin-top: initial;
     height: 100vh;
+
     .fleurs {
       display: initial;
-      position: absolute;
-      width: 75%;
-      right: -33rem;
+      position: fixed;
+      width: 35rem;
+      right: 0rem;
       top: 0rem;
     }
+
     .japonMap {
       width: auto;
       height: 100%;
