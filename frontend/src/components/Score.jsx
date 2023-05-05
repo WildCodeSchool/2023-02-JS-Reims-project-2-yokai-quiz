@@ -51,7 +51,7 @@ function Score({ musicHandle }) {
         }`}
       >
         <figure>
-          <h4>all score</h4>
+          <h4>all scores</h4>
           <p>
             The number of easy temples finished:{" "}
             {localStorage.getItem("easy temple") / 5}
