@@ -89,6 +89,21 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
             </>
           )
       )}
+      <button type="button" key="rulesButton" className="rulesButton">
+        ?
+      </button>
+      <Tooltip
+        className="tooltip"
+        classNameArrow="arrow-tooltip"
+        anchorSelect=".rulesButton"
+      >
+        <h3>Rules</h3>
+        <p>
+          To defeat the final Yokai, you must first purify two low-level yokai
+          temples and then two higher-level ones.
+        </p>
+        <p>Courage, {localStorage.getItem("playerName")}.</p>
+      </Tooltip>
       <Link to="/" className="returnHome">
         <button type="button">Return menu</button>
       </Link>
