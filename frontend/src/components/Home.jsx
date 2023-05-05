@@ -19,9 +19,6 @@ function Home({ musicHandle }) {
   if (localStorage.getItem("gameover") === "gameover") {
     localStorage.clear();
   }
-  if (localStorage.getItem("music") == null) {
-    localStorage.setItem("music", "true");
-  }
 
   return (
     <section className="Home">
