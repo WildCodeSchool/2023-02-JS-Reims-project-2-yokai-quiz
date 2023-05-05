@@ -1,0 +1,12 @@
+.musicButton {
+    font-size: 1rem;
+    right: 1rem;
+    bottom: 5rem;
+  }
+  @media (orientation: landscape) {
+    .musicButton {
+        font-size: 1rem;
+        right: 4.8rem;
+        bottom: 5rem;
+      }
+  }

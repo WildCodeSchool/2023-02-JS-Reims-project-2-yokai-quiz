@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
 import map from "../assets/map_jap.png";
 import fleurs from "../assets/fleur.png";
+import "./map.scss";
 
 function Map({ temples, setSwitchToTemple, templeChoice }) {
   function click(id) {

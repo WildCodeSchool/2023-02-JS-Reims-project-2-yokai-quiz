@@ -21,17 +21,7 @@ function Home() {
   if (localStorage.getItem("music") == null) {
     localStorage.setItem("music", "true");
   }
-  const [music, setMusic] = useState(localStorage.getItem("music"));
-  function musicHandle() {
-    if (music === "true") {
-      localStorage.setItem("music", "false");
-      setMusic("false");
-    }
-    if (music === "false") {
-      localStorage.setItem("music", "true");
-      setMusic("true");
-    }
-  }
+
   return (
     <section className="Home">
       <img src={Titre} className="logo" alt="Logo" />
@@ -67,19 +57,6 @@ function Home() {
       <Link to="/game">
         <button type="button">Start</button>
       </Link>
-      {music === "true" && (
-        <audio controls autoPlay>
-          <source src="/src/assets/backgroundSong.mp3" />
-          <track
-            src="backgroundSong"
-            kind="captions"
-            label="english_captions"
-          />
-        </audio>
-      )}
-      <button type="button" className="musicButton" onClick={musicHandle}>
-        Music
-      </button>
       <Link to="/score">
         <button type="button" className="scoreButton" path="/score">
           Score
