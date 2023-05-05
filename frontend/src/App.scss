@@ -160,7 +160,9 @@ button {
   }
 }
 @keyframes temple {
-  0% {opacity: 0;}
+  0% {
+    opacity: 0;
+  }
 }
 .rulesButton {
   cursor: pointer;
@@ -393,7 +395,6 @@ button {
   border-radius: 50%;
   border: 3px solid $accent-color;
 }
-
 .win{
   background-color: #f8e8d8;
   color: #383637;
@@ -416,6 +417,26 @@ button {
   }
 }
 
+.easy-malus {
+  animation-name: malus;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes malus {
+  to {
+    filter: blur(0.4rem);
+  }
+}
+.mediummalus {
+  animation-name: mediummalus;
+  animation-duration: 35s;
+  animation-fill-mode: forwards;
+}
+@keyframes mediummalus {
+  to {
+    filter: blur(0.3rem);
+  }
+}
 @media (orientation: landscape) {
   .infoQuizz {
     display: initial;
@@ -484,13 +505,15 @@ button {
   .mapContainer {
     margin-top: initial;
     height: 100vh;
+
     .fleurs {
       display: initial;
-      position: absolute;
-      width: 75%;
-      right: -33rem;
+      position: fixed;
+      width: 35rem;
+      right: 0rem;
       top: 0rem;
     }
+
     .japonMap {
       width: auto;
       height: 100%;

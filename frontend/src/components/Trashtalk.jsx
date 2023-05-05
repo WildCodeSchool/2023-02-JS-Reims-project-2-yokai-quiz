@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Trashtalk() {
+function Trashtalk({ talkMalus }) {
   const [trashtalkData, setTrashtalkData] = useState([]);
   const random = Math.floor(Math.random() * trashtalkData.length);
 
@@ -13,9 +14,14 @@ function Trashtalk() {
   }, []);
   return (
     <div className="bulle">
-      <div className="trashtalk">{trashtalkData[random]}</div>
+      <div className="trashtalk">
+        {talkMalus.length < 1 ? trashtalkData[random] : talkMalus}
+      </div>
     </div>
   );
 }
+Trashtalk.propTypes = {
+  talkMalus: PropTypes.string.isRequired,
+};
 
 export default Trashtalk;
