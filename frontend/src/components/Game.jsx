@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import Temple from "./Temple";
 import Map from "./Map";
 
-function Game() {
+function Game({ musicHandle }) {
   const [switchToTemple, setSwitchToTemple] = useState(false);
   const [templeData, setTempleData] = useState([]);
   const [templeChoice, setTempleChoice] = useState(2);
@@ -26,10 +27,17 @@ function Game() {
       setSwitchToTemple={setSwitchToTemple}
       temples={templeData}
       templeChoice={setTempleChoice}
+      musicHandle={musicHandle}
     />
   ) : (
-    <Temple temple={temple} setSwitchToTemple={setSwitchToTemple} />
+    <Temple
+      temple={temple}
+      setSwitchToTemple={setSwitchToTemple}
+      musicHandle={musicHandle}
+    />
   );
 }
-
+Game.propTypes = {
+  musicHandle: PropTypes.func.isRequired,
+};
 export default Game;
