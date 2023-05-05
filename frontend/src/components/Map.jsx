@@ -5,9 +5,8 @@ import PropTypes from "prop-types";
 import templeImage from "../assets/Shinto.png";
 import map from "../assets/map_jap.png";
 import fleurs from "../assets/fleur.png";
-import "./map.scss";
 
-function Map({ temples, setSwitchToTemple, templeChoice }) {
+function Map({ temples, setSwitchToTemple, templeChoice, musicHandle }) {
   function click(id) {
     templeChoice(id);
     setSwitchToTemple(true);
@@ -108,6 +107,9 @@ function Map({ temples, setSwitchToTemple, templeChoice }) {
       <Link to="/" className="returnHome">
         <button type="button">Return menu</button>
       </Link>
+      <button type="button" className="musicButtonMap" onClick={musicHandle}>
+        Music
+      </button>
     </section>
   );
 }
@@ -128,6 +130,6 @@ Map.propTypes = {
   ).isRequired,
   setSwitchToTemple: PropTypes.func.isRequired,
   templeChoice: PropTypes.func.isRequired,
+  musicHandle: PropTypes.func.isRequired,
 };
-
 export default Map;

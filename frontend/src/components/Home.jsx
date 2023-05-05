@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import kami from "../assets/kami.png";
 import Titre from "../assets/Titre.png";
 
-function Home() {
+function Home({ musicHandle }) {
   const [playerName, setPlayerName] = useState(
     localStorage.getItem("playerName") === "Nameless"
       ? ""
@@ -62,6 +63,9 @@ function Home() {
           Score
         </button>
       </Link>
+      <button type="button" className="musicButton" onClick={musicHandle}>
+        Music
+      </button>
       <button
         type="button"
         className="resetButton"
@@ -75,5 +79,8 @@ function Home() {
     </section>
   );
 }
+Home.propTypes = {
+  musicHandle: PropTypes.func.isRequired,
+};
 
 export default Home;

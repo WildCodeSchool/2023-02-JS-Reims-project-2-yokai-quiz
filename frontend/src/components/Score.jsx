@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Score() {
+function Score({ musicHandle }) {
   const [templeData, setTempleData] = useState([]);
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/temples`)
@@ -41,6 +42,9 @@ function Score() {
           <button type="button">Return menu</button>
         )}
       </Link>
+      <button type="button" className="musicButtonScore" onClick={musicHandle}>
+        Music
+      </button>
       <div
         className={`templeScore ${
           localStorage.getItem("gameover") === "gameover" && "over"
@@ -88,4 +92,7 @@ function Score() {
     </div>
   );
 }
+Score.propTypes = {
+  musicHandle: PropTypes.func.isRequired,
+};
 export default Score;

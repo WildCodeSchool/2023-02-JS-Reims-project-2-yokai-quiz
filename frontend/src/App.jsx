@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Game from "./components/Game";
 import Home from "./components/Home";
+import Score from "./components/Score";
 import "react-tooltip/dist/react-tooltip.css";
 import "./App.scss";
-import Score from "./components/Score";
 
 function App() {
   const [music, setMusic] = useState(localStorage.getItem("music"));
@@ -21,9 +21,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/score" element={<Score />} />
+        <Route path="/" element={<Home musicHandle={musicHandle.bind} />} />
+        <Route path="/game" element={<Game musicHandle={musicHandle.bind} />} />
+        <Route
+          path="/score"
+          element={<Score musicHandle={musicHandle.bind} />}
+        />
       </Routes>
       {music === "true" && (
         <audio controls autoPlay>
@@ -35,9 +38,6 @@ function App() {
           />
         </audio>
       )}
-      <button type="button" className="musicButton" onClick={musicHandle}>
-        Music
-      </button>
     </div>
   );
 }

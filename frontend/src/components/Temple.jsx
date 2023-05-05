@@ -5,7 +5,7 @@ import Quizz from "./Quizz";
 import Trashtalk from "./Trashtalk";
 import Stopwatch from "./Stopwatch";
 
-function Temple({ temple, setSwitchToTemple }) {
+function Temple({ temple, setSwitchToTemple, musicHandle }) {
   const [switchToQuizz, setSwitchToQuizz] = useState(false);
   const [yokaiLife, setYokaiLife] = useState(temple.yokaiLife);
   const [playerLife, setPlayerLife] = useState(5);
@@ -61,6 +61,9 @@ function Temple({ temple, setSwitchToTemple }) {
 
   return (
     <div className="Game">
+      <button type="button" className="musicButtonTemple" onClick={musicHandle}>
+        Music
+      </button>
       {yokaiLife < 1 && (
         <div className="win">
           <h1>Win</h1>
@@ -166,6 +169,7 @@ Temple.propTypes = {
     yokaiImage: PropTypes.string.isRequired,
   }).isRequired,
   setSwitchToTemple: PropTypes.func.isRequired,
+  musicHandle: PropTypes.func.isRequired,
 };
 
 export default Temple;
