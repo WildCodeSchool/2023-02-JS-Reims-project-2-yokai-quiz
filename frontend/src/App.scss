@@ -446,10 +446,11 @@ audio {
   border-radius: 1rem;
   border: 5px solid $accent-color;
   position: fixed;
-  top: 20rem;
+  top: 23rem;
   left: 1rem;
   right: 1rem;
-  bottom: 10rem;
+  bottom: 8rem;
+  z-index: 3;
   button{
     color: $secondary-color;
     background-color: $main-color;
@@ -570,6 +571,7 @@ audio {
       width: 35rem;
       right: 0rem;
       top: 0rem;
+      z-index: -1;
     }
 
     .japonMap {
@@ -594,6 +596,8 @@ audio {
     right: 1rem;
   }
   .win{
+    top: 25rem;
+    bottom: 4rem;
     p{
       margin-top: 3rem;
       margin-bottom: 3rem;
